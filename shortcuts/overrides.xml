@@ -4,8 +4,10 @@
     <requiredshortcut label="5" thumbnail="icons/settings.png" icon="icons/settings.png">ActivateWindow(1120)</requiredshortcut>
 
     <warn heading="$LOCALIZE[14117]" message="$LOCALIZE[31019]">ActivateWindow(1120)</warn>
+	
+    <thumbnailBrowseDefault>special://home/addons/resource.images.tvOS-X/resources/icons/</thumbnailBrowseDefault>
+	<backgroundBrowse default="special://home/addons/resource.images.tvOS-X/resources/backgrounds/">True</backgroundBrowse>
 
-    <thumbnailBrowseDefault>resource://resource.images.tvOS-X./icons/</thumbnailBrowseDefault>
 
     <icon labelID="movies">icons/movies.png</icon>
     <icon labelID="tvshows">icons/tvshows.png</icon>
@@ -17,7 +19,8 @@
         <enableon>211</enableon>
         <item control="401">$ADDON[script.skinshortcuts 32048]</item>	  <!-- Choose item for menu -->
         <item control="305">$ADDON[script.skinshortcuts 32025]</item>	  <!-- Set label -->
-        <item control="306">$ADDON[script.skinshortcuts 32026]</item>	  <!-- Set thumbnail -->
+        <item control="306">$ADDON[script.skinshortcuts 32026]</item>	  <!-- Set thumbnail -->	
+        <item control="310">$ADDON[script.skinshortcuts 32045]</item>	  <!-- Set background -->		
         <item control="307">$ADDON[script.skinshortcuts 32027]</item>	  <!-- Change action -->
         <item control="302">$ADDON[script.skinshortcuts 32001]</item>	  <!-- Delete -->		
         <item control="303">$ADDON[script.skinshortcuts 32002]</item>	  <!-- Move Up -->

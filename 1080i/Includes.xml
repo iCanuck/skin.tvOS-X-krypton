@@ -234,23 +234,21 @@
     </include>	
     <include name="HomeBackground">	
         <control type="image" description="HomeBackground">
-			<visible>IsEmpty(Skin.String(CustomBgHome))</visible>
+			<visible>IsEmpty(Skin.String(CustomBgHome)) + !Skin.HasTheme(White)</visible>
             <width>1920</width>
             <height>1080</height>
             <aspectratio>stretch</aspectratio>
             <!--texture>$VAR[HomeBG]</texture-->
 			<texture colordiffuse="$VAR[HomeColor]">$VAR[HomeBG]</texture>
         </control>
-		
         <control type="image" description="HomeBackground">
-			<visible>!IsEmpty(Skin.String(CustomBgHome))</visible>
+			<visible>!IsEmpty(Skin.String(CustomBgHome)) | !IsEmpty(Container(9000).ListItem.Property(Background) | Skin.HasTheme(White)</visible>
             <width>1920</width>
             <height>1080</height>
             <aspectratio>stretch</aspectratio>
             <!--texture>$VAR[HomeBG]</texture-->
 			<texture>$VAR[HomeBG]</texture>
         </control>
-
         <control type="image" description="Diffuse Home BG">
             <width>1920</width>
             <height>1080</height>
@@ -260,14 +258,14 @@
     </include>	
     <include name="OtherBackground">			
         <control type="image" description="OtherBG">
-			<visible>IsEmpty(Skin.String(CustomBgOther))</visible>
+			<visible>IsEmpty(Skin.String(CustomBgOther)) + !Skin.HasTheme(White)</visible>
             <width>1920</width>
             <height>1080</height>
             <aspectratio>stretch</aspectratio>
 			<texture colordiffuse="$VAR[OtherColor]">$VAR[OtherBG]</texture>
         </control>
         <control type="image" description="OtherBG">
-			<visible>!IsEmpty(Skin.String(CustomBgOther)) | !IsEmpty(Skin.String(CustomBgHome))</visible>
+			<visible>!IsEmpty(Skin.String(CustomBgOther)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(White)</visible>
             <width>1920</width>
             <height>1080</height>
             <aspectratio>stretch</aspectratio>

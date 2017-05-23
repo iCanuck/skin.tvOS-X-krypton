@@ -40,7 +40,8 @@
                     <align>left</align>
                     <label>$LOCALIZE[31079]</label>
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick condition="IsEmpty(Skin.String(CustomHomePattern))">Skin.SetFile(CustomHomePattern,.jpg|.png|.gif,special://skin/patterns)</onclick>
+                    <onclick condition="IsEmpty(Skin.String(CustomHomePattern)) + System.HasAddon(resource.images.tvOS-X) + !System.HasAddon(resource.images.tvOS-X-Big)">Skin.SetFile(CustomHomePattern,.jpg|.png|.gif,special://home/addons/resource.images.tvOS-X/resources/patterns)</onclick>
+                    <onclick condition="IsEmpty(Skin.String(CustomHomePattern)) + System.HasAddon(resource.images.tvOS-X-Big)">Skin.SetFile(CustomHomePattern,.jpg|.png|.gif,special://home/addons/resource.images.tvOS-X-Big/resources/patterns)</onclick>								
 					<onclick condition="!IsEmpty(Skin.String(CustomHomePattern))">Skin.Reset(CustomHomePattern)</onclick>
 					<onclick condition="!IsEmpty(Skin.String(CustomBgHome))">Skin.Reset(CustomBgHome)</onclick>
                     <selected>!IsEmpty(Skin.String(CustomHomePattern))</selected>

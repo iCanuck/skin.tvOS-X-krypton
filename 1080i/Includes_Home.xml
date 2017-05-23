@@ -49,7 +49,7 @@
         <centerleft>241</centerleft>
 		<width>367</width>
 		<height>256</height>
-		<texture>images/HomeSlider.png</texture>
+		<texture colordiffuse="invert2">images/HomeSlider.png</texture>
 		<aspectratio>stretch</aspectratio>
 		<animation condition="Container(9000).Column(0)" effect="slide" end="0,0" time="200">Conditional</animation>
 		<animation condition="Container(9000).Column(1)" effect="slide" end="360,0" time="200">Conditional</animation>
@@ -75,7 +75,7 @@
         <centerleft>241</centerleft>
 		<width>367</width>
 		<height>256</height>
-		<texture>images/HomeSlider.png</texture>
+		<texture colordiffuse="invert2">images/HomeSlider.png</texture>
 		<aspectratio>stretch</aspectratio>
 		<animation condition="Container(211).Column(0)" effect="slide" end="0,0" time="200">Conditional</animation>
 		<animation condition="Container(211).Column(1)" effect="slide" end="360,0" time="200">Conditional</animation>

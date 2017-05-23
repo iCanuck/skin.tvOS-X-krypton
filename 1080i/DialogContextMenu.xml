@@ -8,22 +8,45 @@
         <origin x="0" y="0" />
     </coordinates>
     <controls>
+	
+		<control type="image" id="999" description="List back">
+			<centerleft>960</centerleft>
+			<centertop>586</centertop>
+			<width>842</width>
+			<height>1170</height>
+			<aspectratio>stretch</aspectratio>
+			<!--colordiffuse>$VAR[diffusedialog]</colordiffuse-->
+			<include condition="IsEmpty(Skin.String(CustomBgDialog))">DialogTexture</include>
+			<include condition="!IsEmpty(Skin.String(CustomBgDialog))">DialogTextureBG</include>	
+		</control>
+
+<!--
+		<control type="image" id="999" description="List back diffuse">
+			<centerleft>960</centerleft>
+			<centertop>586</centertop>
+			<width>842</width>
+			<height>1170</height>
+			<aspectratio>stretch</aspectratio>
+			<texture border="50" colordiffuse="$VAR[diffusedialog]" diffuse="images/DialogDiffuse.png">images/whitebg.png</texture>
+		</control>
+	
+<!--	
         <control type="image" id="999" description="Background image">
             <centerleft>960</centerleft>
             <centertop>540</centertop>
             <height>1080</height>
             <width>750</width>
             <texture border="50">$VAR[ContextMenu]</texture>
-            <!--colordiffuse>dialog</colordiffuse-->
+            <!--colordiffuse>dialog</colordiffuse>
         </control>
+-->			
         <control type="grouplist" id="996" description="Context menu container">
-            <centerleft>960</centerleft>
-            <height>960</height>
-            <!--include>DialogGLs</include-->
 			<centerleft>960</centerleft>
-			<centertop>540</centertop>
+			<centertop>586</centertop>
+            <!--include>DialogGLs</include-->
+            <height>960</height>
 			<width>576</width>
-			<height>380</height>
+			<!--height>380</height-->
 			<itemgap>10</itemgap>
 			<onleft>50</onleft>
 			<onright>50</onright>

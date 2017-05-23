@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1118">
-    <defaultcontrol always="true">900</defaultcontrol>
+    <defaultcontrol always="true">9000</defaultcontrol>
     <include>DialogOpenClose</include>
     <controls>
         <control type="group" description="choiceAddons">
@@ -12,7 +12,7 @@
               <width>738</width>
               <height>442</height>
 			  <aspectratio>stretch</aspectratio>
-			  <texture>borders/DialogBorder-Dark.png</texture>	  
+			  <texture>$VAR[BorderColor]</texture>	  
 			</control>	
             <control type="image" description="List back">
                 <centerleft>960</centerleft>
@@ -20,8 +20,8 @@
                 <width>802</width>
                 <height>520</height>
                 <aspectratio>stretch</aspectratio>
-				<include condition="IsEmpty(Skin.String(CustomBgDialog))">DialogTexture</include>
-				<include condition="!IsEmpty(Skin.String(CustomBgDialog))">DialogTextureBG</include>	
+				<include condition="IsEmpty(Skin.String(CustomBgDialog)) + !Skin.HasTheme(White)">DialogTexture</include>
+				<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | Skin.HasTheme(White)">DialogTextureBG</include>	
             </control>	
             <control type="image" description="List back diffuse">
                 <centerleft>960</centerleft>
@@ -43,7 +43,7 @@
                 <!--colordiffuse>dialog</colordiffuse>
             </control>
 -->					
-            <control type="grouplist" id="900">
+            <control type="grouplist" id="9000">
                 <centertop>540</centertop>
                 <height>400</height>
                 <align>center</align>

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+
+
+	<variable name="BorderColor">
+		<value condition="Skin.HasTheme(White)">borders/DialogBorder-Light.png</value>
+		<value>borders/DialogBorder-Dark.png</value>
+    </variable>	
+
+
 	<variable name="HomeColor">
 		<value condition="Skin.HasSetting(Red-HomeBG)">FF7A0000</value>
 		<value condition="Skin.HasSetting(Orange-HomeBG)">FF982B00</value>
@@ -15,14 +23,17 @@
 	
 	<variable name="HomePattern">	
         <value condition="!IsEmpty(Skin.String(CustomHomePattern))">$INFO[Skin.String(CustomHomePattern)]</value>	
-		<value condition="IsEmpty(Skin.String(CustomHomePattern)) + !Skin.HasTheme(White)">special://skin/patterns/default.jpg</value>
-		<value condition="IsEmpty(Skin.String(CustomHomePattern)) + Skin.HasTheme(White)">special://home/addons/script.tvOS-X.backgrounds/backgrounds/default_light.jpg</value>
+		<value condition="IsEmpty(Skin.String(CustomHomePattern)) + !Skin.HasTheme(White) + System.HasAddon(resource.images.tvOS-X) + !System.HasAddon(resource.images.tvOS-X-Big)">special://home/addons/resource.images.tvOS-X/resources/patterns/default.jpg</value>
+		<value condition="IsEmpty(Skin.String(CustomHomePattern)) + !Skin.HasTheme(White) + System.HasAddon(resource.images.tvOS-X-Big)">special://home/addons/resource.images.tvOS-X-Big/resources/patterns/default.jpg</value>				
+		<value condition="IsEmpty(Skin.String(CustomHomePattern)) + Skin.HasTheme(White)">special://home/addons/resource.images.tvOS-X/resources/backgrounds/default_light.jpg</value>	
     </variable>		
 
 	<variable name="HomeBG">	
-        <value condition="!IsEmpty(Skin.String(CustomBgHome))">$INFO[Skin.String(CustomBgHome)]</value>	
-		<value condition="IsEmpty(Skin.String(CustomBgHome)) + !Skin.HasTheme(White)">$VAR[HomePattern]</value>
-		<value condition="IsEmpty(Skin.String(CustomBgHome)) + Skin.HasTheme(White)">special://home/addons/script.tvOS-X.backgrounds/backgrounds/default_light.jpg</value>
+        <value condition="!IsEmpty(Skin.String(CustomBgHome)) + IsEmpty(Container(9000).ListItem.Property(Background)">$INFO[Skin.String(CustomBgHome)]</value>	
+		<value condition="IsEmpty(Skin.String(CustomBgHome)) + !Skin.HasTheme(White) + IsEmpty(Container(9000).ListItem.Property(Background)">$VAR[HomePattern]</value>
+		<value condition="!IsEmpty(Container(9000).ListItem.Property(Background)">$INFO[Container(9000).ListItem.Property(Background)]</value>		
+		<value condition="IsEmpty(Skin.String(CustomBgHome)) + Skin.HasTheme(White)">special://home/addons/resource.images.tvOS-X/resources/backgrounds/default_light.jpg</value>
+		<value condition="IsEmpty(Skin.String(CustomBgHome)) + Skin.HasTheme(White) + IsEmpty(Container(9000).ListItem.Property(Background)">special://home/addons/resource.images.tvOS-X/resources/backgrounds/default_light.jpg</value>		
     </variable>
 	
 	<variable name="diffusehome">
@@ -48,16 +59,17 @@
 	
 	<variable name="OtherPattern">	
         <value condition="!IsEmpty(Skin.String(CustomOtherPattern))">$INFO[Skin.String(CustomOtherPattern)]</value>	
-		<value condition="IsEmpty(Skin.String(CustomOtherPattern)) + !Skin.HasTheme(White)">special://skin/patterns/default.jpg</value>
+		<value condition="IsEmpty(Skin.String(CustomOtherPattern)) + !Skin.HasTheme(White) + System.HasAddon(resource.images.tvOS-X) + !System.HasAddon(resource.images.tvOS-X-Big)">special://home/addons/resource.images.tvOS-X/resources/patterns/default.jpg</value>
+		<value condition="IsEmpty(Skin.String(CustomOtherPattern)) + !Skin.HasTheme(White) + System.HasAddon(resource.images.tvOS-X-Big)">special://home/addons/resource.images.tvOS-X-Big/resources/patterns/default.jpg</value>
 		<!--value condition="IsEmpty(Skin.String(CustomOtherPattern)) + !Skin.HasTheme(White)">$VAR[HomePattern]</value-->		
-		<value condition="IsEmpty(Skin.String(CustomOtherPattern)) + Skin.HasTheme(White)">special://home/addons/script.tvOS-X.backgrounds/backgrounds/default_light.jpg</value>
+		<value condition="IsEmpty(Skin.String(CustomOtherPattern)) + Skin.HasTheme(White)">special://home/addons/resource.images.tvOS-X/resources/backgrounds/default_light.jpg</value>
     </variable>		
 	
 	<variable name="OtherBG">	
         <value condition="!IsEmpty(Skin.String(CustomBgOther))">$INFO[Skin.String(CustomBgOther)]</value>	
         <value condition="!IsEmpty(Skin.String(CustomBgHome))">$INFO[Skin.String(CustomBgHome)]</value>			
 		<value condition="IsEmpty(Skin.String(CustomBgOther)) + !Skin.HasTheme(White)">$VAR[OtherPattern]</value>
-		<value condition="IsEmpty(Skin.String(CustomBgOther)) + Skin.HasTheme(White)">special://home/addons/script.tvOS-X.backgrounds/backgrounds/default_light.jpg</value>
+		<value condition="IsEmpty(Skin.String(CustomBgOther)) + Skin.HasTheme(White)">special://home/addons/resource.images.tvOS-X/resources/backgrounds/default_light.jpg</value>
     </variable>
 	
 	<variable name="diffuseother">
@@ -84,15 +96,16 @@
 	
 	<variable name="DialogPattern">	
         <value condition="!IsEmpty(Skin.String(CustomDialogPattern))">$INFO[Skin.String(CustomDialogPattern)]</value>	
-		<value condition="IsEmpty(Skin.String(CustomDialogPattern)) + !Skin.HasTheme(White)">special://skin/patterns/default.jpg</value>
-		<value condition="IsEmpty(Skin.String(CustomDialogPattern)) + Skin.HasTheme(White)">special://home/addons/script.tvOS-X.backgrounds/backgrounds/default_light.jpg</value>
+		<value condition="IsEmpty(Skin.String(CustomDialogPattern)) + !Skin.HasTheme(White) + System.HasAddon(resource.images.tvOS-X) + !System.HasAddon(resource.images.tvOS-X-Big)">special://home/addons/resource.images.tvOS-X/resources/patterns/default.jpg</value>
+		<value condition="IsEmpty(Skin.String(CustomDialogPattern)) + !Skin.HasTheme(White) + System.HasAddon(resource.images.tvOS-X-Big)">special://home/addons/resource.images.tvOS-X-Big/resources/patterns/default.jpg</value>
+		<value condition="IsEmpty(Skin.String(CustomDialogPattern)) + Skin.HasTheme(White)">special://home/addons/resource.images.tvOS-X/resources/backgrounds/default_light.jpg</value>
     </variable>		
 	
 	<variable name="DialogBG">	
         <value condition="!IsEmpty(Skin.String(CustomBgDialog))">$INFO[Skin.String(CustomBgDialog)]</value>	
         <value condition="!IsEmpty(Skin.String(CustomBgHome))">$INFO[Skin.String(CustomBgHome)]</value>			
 		<value condition="IsEmpty(Skin.String(CustomBgDialog)) + !Skin.HasTheme(White)">$VAR[DialogPattern]</value>
-		<value condition="IsEmpty(Skin.String(CustomBgDialog)) + Skin.HasTheme(White)">special://home/addons/script.tvOS-X.backgrounds/backgrounds/default_light.jpg</value>
+		<value condition="IsEmpty(Skin.String(CustomBgDialog)) + Skin.HasTheme(White)">special://home/addons/resource.images.tvOS-X/resources/backgrounds/default_light.jpg</value>
     </variable>
 	
 	<variable name="diffusedialog">
@@ -101,7 +114,6 @@
         <value condition="Skin.HasSetting(dialogdiffuse3)">88000000</value>
         <value condition="Skin.HasSetting(dialogdiffuse4)">99000000</value>
         <value condition="Skin.HasSetting(dialogdiffuse5)">BB000000</value>
-
 		<value>00464646</value>
     </variable>		
 	
@@ -124,7 +136,8 @@
         <value condition="Skin.HasSetting(greenbanner)">66007732</value>
         <value condition="Skin.HasSetting(bluebanner)">66005484</value>
         <value condition="Skin.HasSetting(indigobanner)">66150071</value>
-        <value condition="Skin.HasSetting(violetbanner)">664300A7</value>		
+        <value condition="Skin.HasSetting(violetbanner)">664300A7</value>
+		<value condition="Skin.HasTheme(White)">66555555</value><!-- Sio2 Default -->
 		<value>77000000</value>
     </variable>		
 
@@ -138,7 +151,7 @@
         <value condition="!IsEmpty(Skin.String(CustomBgOther))">$INFO[Skin.String(CustomBgOther)]</value>	
         <value condition="!IsEmpty(Skin.String(CustomBgHome))">$INFO[Skin.String(CustomBgHome)]</value>			
 		<value condition="IsEmpty(Skin.String(CustomBgOther)) + !Skin.HasTheme(White)">$VAR[OtherPattern]</value>
-		<value condition="IsEmpty(Skin.String(CustomBgOther)) + Skin.HasTheme(White)">special://home/addons/script.tvOS-X.backgrounds/backgrounds/default_light.jpg</value>	
+		<value condition="IsEmpty(Skin.String(CustomBgOther)) + Skin.HasTheme(White)">special://home/addons/resource.images.tvOS-X/resources/backgrounds/default_light.jpg</value>	
 	
 <!--	
 
@@ -150,7 +163,7 @@ LATEST
 ---------------
         <value condition="!IsEmpty(Skin.String(CustomBgOther))">$INFO[Skin.String(CustomBgOther)]</value>	
         <value condition="!IsEmpty(Skin.String(CustomBgHome))">$INFO[Skin.String(CustomBgHome)]</value>			
-		<value condition="IsEmpty(Skin.String(CustomBgOther)) + Skin.HasTheme(White)">special://home/addons/script.tvOS-X.backgrounds/backgrounds/default_light.jpg</value>
+		<value condition="IsEmpty(Skin.String(CustomBgOther)) + Skin.HasTheme(White)">special://home/addons/resource.images.tvOS-X/resources/backgrounds/default_light.jpg</value>
 -->	
 
 

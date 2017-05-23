@@ -2,6 +2,17 @@
 - finish dialogok dialog bg
 - finish dialogcontextmenu - bg darkness
 
+
+v3.0.2
+(05/22/2017)
+- moved patterns to resource.images.tvOS-X
+- removed unused textures
+- added invert1/invert2 colors
+
+
+
+
+
 v3.0.1
 (05/21/2017)
 - added custom home/other/dialog patterns

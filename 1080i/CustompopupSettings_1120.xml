@@ -12,7 +12,7 @@
               <width>738</width>
               <height>360</height>
 			  <aspectratio>stretch</aspectratio>
-			  <texture>borders/DialogBorder-Dark.png</texture>	  
+			  <texture>$VAR[BorderColor]</texture>	  
 			</control>	
             <control type="image" description="List back">
                 <centerleft>960</centerleft>
@@ -20,8 +20,8 @@
                 <width>802</width>
                 <height>442</height>
                 <aspectratio>stretch</aspectratio>
-				<include condition="IsEmpty(Skin.String(CustomBgDialog))">DialogTexture</include>
-				<include condition="!IsEmpty(Skin.String(CustomBgDialog))">DialogTextureBG</include>	
+				<include condition="IsEmpty(Skin.String(CustomBgDialog)) + !Skin.HasTheme(White)">DialogTexture</include>
+				<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | Skin.HasTheme(White)">DialogTextureBG</include>	
             </control>	
             <control type="image" description="List back diffuse">
                 <centerleft>960</centerleft>

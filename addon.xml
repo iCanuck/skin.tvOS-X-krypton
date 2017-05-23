@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
-<addon id="skin.tvOS-X-krypton" version="3.0.0" name="tvOS-X" provider-name="iCanuck">
+<addon id="skin.tvOS-X-krypton" version="3.0.2" name="tvOS-X" provider-name="iCanuck">
     <requires>
         <import addon="xbmc.gui" version="5.12.0"/>
         <!--<import addon="script.extendedinfo" version="5.6.0"/>-->
@@ -10,7 +10,7 @@
 		<import addon="resource.images.tvOS-X" version="0.0.1"/>
 		<!--import addon="script.tvOS-X.backgrounds" version="1.0.0"/-->
     </requires>
-    <extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="1" debugging="false">
+    <extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="1" debugging="true">
         <res width="1920" height="1080" aspect="16:9" default="true" folder="1080i"/>
         <assets>
             <icon>icon.png</icon>
@@ -69,6 +69,6 @@
 
         <description lang="en">If you like Apple "everything at hand" policy for interfaces, You might want to give this Skin a try. I designed it trying to put as few clicks as possible between You and what You're trying to do (or watch ;)</description>
 
-        <disclaimer>Welcome to CBOX</disclaimer>
+        <disclaimer>tvOS-X Skin</disclaimer>
     </extension>
 </addon>

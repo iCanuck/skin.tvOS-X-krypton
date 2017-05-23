@@ -6,7 +6,8 @@
     <color name="maindim">f0444444</color>
 	<color name="darktextunfo">ffb1b1b1</color>
     <color name="darktext">ffdedede</color>
-    <color name="invert">ff000000</color>
+    <color name="invert1">ff000000</color>
+    <color name="invert2">ffffffff</color>	
     <color name="infos">white</color>
     <color name="dialog">ff444444</color>
     <color name="notification">cd444444</color>
