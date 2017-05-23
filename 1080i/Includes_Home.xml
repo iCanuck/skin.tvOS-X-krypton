@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="HomeButtonsCommons">
+		<left>0</left>
+		<width>300</width>
+		<height>81</height>
+		<texturefocus>-</texturefocus>
+		<label>-</label>
+		</include>
+		<include name="Sublist">
+		<top>592</top>
+		<width>300</width>
+		<height>430</height>
+		<scrolltime>280</scrolltime>
+		<itemlayout height="72" width="300">
+			<control type="label">
+				<left>150</left>
+				<top>0</top>
+				<width>261</width>
+				<height>72</height>
+				<textoffsetx>0</textoffsetx>
+				<font>size38</font>
+				<label>$INFO[ListItem.Label]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+			</control>
+		</itemlayout>
+		<focusedlayout height="72" width="300">
+			<control type="label">
+				<left>150</left>
+				<top>0</top>
+				<width>261</width>
+				<height>72</height>
+				<textoffsetx>0</textoffsetx>
+				<font>size38</font>
+				<label>$INFO[ListItem.Label]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+			</control>
+			</focusedlayout>
+	</include>
+    <include name="HomeSlider">
+	  <control type="image">
+		<visible>Control.HasFocus(9000)</visible>
+		<!--animation condition="!Container(9000).Row(0)" effect="slide" start="0,0" end="0,-629" time="220">Conditonal</animation-->
+		<centertop>857</centertop>
+        <centerleft>241</centerleft>
+		<width>367</width>
+		<height>256</height>
+		<texture>images/HomeSlider.png</texture>
+		<aspectratio>stretch</aspectratio>
+		<animation condition="Container(9000).Column(0)" effect="slide" end="0,0" time="200">Conditional</animation>
+		<animation condition="Container(9000).Column(1)" effect="slide" end="360,0" time="200">Conditional</animation>
+		<animation condition="Container(9000).Column(2)" effect="slide" end="720,0" time="200">Conditional</animation>
+		<animation condition="Container(9000).Column(3)" effect="slide" end="1080,0" time="200">Conditional</animation>
+		<animation condition="Container(9000).Column(4)" effect="slide" end="1440,0" time="200">Conditional</animation>
+		<animation condition="Container(9000).Row(0)" effect="slide" end="0,0" time="200">Conditional</animation>		
+		<animation condition="Container(9000).Row(1)" effect="slide" end="0,24" time="200">Conditional</animation>		
+		<animation condition="Container(9000).Row(2)" effect="slide" end="0,49" time="200">Conditional</animation>		
+		<animation condition="Container(9000).Row(3)" effect="slide" end="0,74" time="200">Conditional</animation>		
+		<animation condition="Container(9000).Row(4)" effect="slide" end="0,69" time="200">Conditional</animation>	
+		<animation condition="Container(9000).Row(5)" effect="slide" end="0,65" time="200">Conditional</animation>
+		<!--animation condition="Container(9000).Row(6)" effect="slide" end="0,199" time="200">Conditional</animation>	
+		<animation condition="Container(9000).Row(7)" effect="slide" end="0,489" time="200">Conditional</animation>
+		<animation condition="Container(9000).Row(8)" effect="slide" end="0,779" time="200">Conditional</animation-->		
+	  </control>	
+    </include>
+    <include name="HomeSliderCustom">
+	  <control type="image">
+		<visible>Control.HasFocus(211)</visible>
+		<!--animation condition="!Container(9000).Row(0)" effect="slide" start="0,0" end="0,-629" time="220">Conditonal</animation-->
+		<centertop>230</centertop>
+        <centerleft>241</centerleft>
+		<width>367</width>
+		<height>256</height>
+		<texture>images/HomeSlider.png</texture>
+		<aspectratio>stretch</aspectratio>
+		<animation condition="Container(211).Column(0)" effect="slide" end="0,0" time="200">Conditional</animation>
+		<animation condition="Container(211).Column(1)" effect="slide" end="360,0" time="200">Conditional</animation>
+		<animation condition="Container(211).Column(2)" effect="slide" end="720,0" time="200">Conditional</animation>
+		<animation condition="Container(211).Column(3)" effect="slide" end="1080,0" time="200">Conditional</animation>
+		<animation condition="Container(211).Column(4)" effect="slide" end="1440,0" time="200">Conditional</animation>
+		<animation condition="Container(211).Row(0)" effect="slide" end="0,0" time="200">Conditional</animation>		
+		<animation condition="Container(211).Row(1)" effect="slide" end="0,290" time="200">Conditional</animation>		
+		<animation condition="Container(211).Row(2)" effect="slide" end="0,580" time="200">Conditional</animation>		
+		<animation condition="Container(211).Row(3)" effect="slide" end="0,870" time="200">Conditional</animation>		
+		<animation condition="Container(211).Row(4)" effect="slide" end="0,1160" time="200">Conditional</animation>	
+		<animation condition="Container(211).Row(5)" effect="slide" end="0,1450" time="200">Conditional</animation>
+		<!--animation condition="Container(9000).Row(6)" effect="slide" end="0,199" time="200">Conditional</animation>	
+		<animation condition="Container(9000).Row(7)" effect="slide" end="0,489" time="200">Conditional</animation>
+		<animation condition="Container(9000).Row(8)" effect="slide" end="0,779" time="200">Conditional</animation-->		
+	  </control>	
+    </include>	
+	<include name="HomeZoomTop">
+		<animation effect="zoom" start="100" end="122" time="120" center="180,208" tween="Back" easing="Out">Focus</animation>
+		<animation effect="zoom" start="122" end="100" time="120" center="180,208">unFocus</animation>					
+		<animation effect="zoom" start="100" end="322" time="120" center="180,208" tween="Back" easing="Out">onClick</animation> 
+	</include>
+	<include name="HomeZoom">   
+		<animation effect="zoom" start="100" end="125" time="120" center="auto" tween="Back" easing="Out">Focus</animation>
+		<animation effect="zoom" start="125" end="100" time="200" center="auto">unFocus</animation>	 
+	</include>
+ 	<include name="HomeZoomShadow"> 
+		<control type="image" description="shade_base">
+		    <animation effect="fade" start="0" end="100" time="180">Focus</animation>
+            <animation effect="fade" start="100" end="0" time="100">unFocus</animation>
+			<centerleft>180</centerleft>
+			<animation effect="slide" start="0,0" end="0,34" time="240" reversible="true" tween="Back" easing="Out">Focus</animation>
+			<width>350</width>
+			<height>250</height>
+			<texture>icons/iconbase.png</texture>
+		</control>	
+	</include>
+	<include name="HomeBannerAnimation">	 
+		<animation condition="![Container(9000).Row(0)]" effect="slide" start="0,0" end="0,281" time="220">Conditonal</animation>
+		<animation condition="![Container(9000).Row(0) | Container(9000).Row(1)]" effect="slide" start="0,0" end="0,263" time="220">Conditonal</animation>
+		<animation condition="![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2)]" effect="slide" start="0,0" end="0,264" time="220">Conditonal</animation>
+		<animation condition="![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2) | Container(9000).Row(3)]" effect="slide" start="0,0" end="0,265" time="220">Conditonal</animation>
+		<animation condition="![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2) | Container(9000).Row(3) | Container(9000).Row(4)]" effect="slide" start="0,0" end="0,266" time="220">Conditonal</animation>
+		<!--animation condition="![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2) | Container(9000).Row(3) | Container(9000).Row(4) | Container(9000).Row(5) | Container(9000).Row(6)]" effect="slide" start="0,0" end="0,264" time="220">Conditonal</animation-->
+	</include> 
+	<!--include name="HomeBannerStatic">	 
+		<animation condition="!Container(9000).Row(0)" effect="slide" start="0,0" end="0,-131" time="220">Conditonal</animation>
+		<animation condition="[![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2)]]" effect="slide" start="0,0" end="0,-900" time="220">Conditonal</animation>
+	</include--> 
+
+
+
+
+	
+</includes>

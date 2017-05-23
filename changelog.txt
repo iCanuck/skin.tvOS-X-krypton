@@ -1,0 +1,86 @@
+- test/fix textview background (not tested)
+- finish dialogok dialog bg
+- finish dialogcontextmenu - bg darkness
+
+v3.0.1
+(05/21/2017)
+- added custom home/other/dialog patterns
+- added custom home/other/dialog backgrounds
+- added home/other/dialog bg darkness settings
+- added home/other/dialog bg color settings
+- added select background to skinshortcuts
+
+(04/20/2017)
+- added clock to settings and myvideonav (incomplete) add clock to other windows
+- reduced shelf label size
+- fixed settings grouplist height
+- changed osdoverlay color
+- fixed dialogconfirm progress bar color
+- changed dialogconfirm bkgd size
+- fixed dialogbusy bkgd
+- added delayed "loading please wait" label to dialogbusy
+- replaced default font with SF UI DISPLAY font (from tvos-x)
+- added alternate roboto-regular font
+- added alternate light and strong font
+- changed myvideonav fanart diffuse color
+
+(04/16/2017)
+- changed music icon only visible when library has content
+- changed search icon only visible when search addon installed
+- fixed home customizer slider
+- added t9 auto completion to osd keyboard
+- added auto completion addon dependency
+- added extendedinfo addon dependency
+
+(04/09/2017)
+- fixed music library view focused label color
+- fixed music songs view focused label color
+- fixed filebrowser arrow alignment
+- increased dialogbusy image size
+- fixed dialogselect banner color
+- fixed addonbrowser left/right navigation
+- added fanart to addonbrowser
+
+(04/08/2017)
+- fixed home slider alignment for all rows
+- fixed shelf displaying on second row
+- fixed home icon zoom animation setting label alignment
+- fixed home icon label color
+- changed dialog bkgd to default bkgd
+- changed home favs icon to red
+- added homebanner skinsetting
+- added homebanner animation skinsetting
+- added appstore to settings menu
+- moved filemanager in settings menu
+- reduced dialogconfirm bkgd size
+- replaced watchstatus with checkmarks
+- added label to iconview / adjusted shadow
+- fixed videolibrary icon view
+- added home video preview
+- changed darktext color / added darktextunfo color
+- home kodi icon visible when network connection
+- changed watchcount bkgd badge color / re-aligned
+- added view scroll letters skinsetting
+- added fanart background skinsetting
+- added startup splash animation skinsetting
+
+(04/06/2017)
+- fixed home icon label alignment
+- added home slider / home icon zoom skinsetting
+
+(04/04/2017)
+- renamed backdrop folder
+- added Custom Other Wallpaper skinsetting
+
+(04/03/2017)
+- dark theme by default
+- modified myweather, weathershelf and weather icon
+- added Custom Home Wallpaper skinsetting
+- flipped radiobutton images
+- added filebrowser thumb preview
+- added up/down to homecustomizer contextmenu
+
+v3.0.0
+(04/02/2017)
+- Port of SiO2-Krypton v4.0.5
+

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1703">
+  <defaultcontrol>9000</defaultcontrol>
+  <include>DialogOpenClose</include>
+  <controls>
+
+	<control type="image" description="List back border">
+	  <centerleft>960</centerleft>
+	  <centertop>540</centertop>
+	  <width>738</width>
+	  <height>648</height>
+	  <aspectratio>stretch</aspectratio>
+	  <texture>borders/DialogBorder-Dark.png</texture>	  
+	</control>	
+	<control type="image" description="List back">
+		<centerleft>960</centerleft>
+		<centertop>540</centertop>
+		<width>802</width>
+		<height>726</height>
+		<aspectratio>stretch</aspectratio>
+		<include condition="IsEmpty(Skin.String(CustomBgDialog))">DialogTexture</include>
+		<include condition="!IsEmpty(Skin.String(CustomBgDialog))">DialogTextureBG</include>	
+	</control>	
+	<control type="image" description="List back diffuse">
+		<centerleft>960</centerleft>
+		<centertop>540</centertop>
+		<width>802</width>
+		<height>726</height>
+		<aspectratio>stretch</aspectratio>
+		<texture border="50" colordiffuse="$VAR[diffusedialog]" diffuse="images/DialogDiffuse.png">images/whitebg.png</texture>
+	</control> 
+  
+<!--  
+    <control type="image" description="List back">
+      <centerleft>960</centerleft>
+      <centertop>540</centertop>
+      <width>802</width>
+      <height>640</height>
+      <aspectratio>stretch</aspectratio>
+      <texture border="50">$VAR[ContextMenu]</texture>
+      <!--colordiffuse>dialog</colordiffuse>
+    </control>
+-->
+    <control type="grouplist" id="9000">
+      <centertop>528</centertop>
+      <height>580</height>
+      <align>center</align>
+      <include>DialogGLs</include> 
+	  <control type="label" id="99" description="Dialog heading">
+		<width>525</width>
+		<height>112</height>
+		<label>$LOCALIZE[31083]</label>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>size30</font>
+		<!--textcolor>50details</textcolor-->
+	  </control>	  
+	  <control type="radiobutton" id="1">
+		<label>$LOCALIZE[31081] 1</label>
+		<onclick>Skin.ToggleSetting(otherdiffuse1)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse2)">Skin.ToggleSetting(otherdiffuse2)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse3)">Skin.ToggleSetting(otherdiffuse3)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse4)">Skin.ToggleSetting(otherdiffuse4)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse5)">Skin.ToggleSetting(otherdiffuse5)</onclick>					
+		<selected>Skin.HasSetting(otherdiffuse1)</selected>				
+	  </control>
+	  <control type="radiobutton" id="2">
+		<label>$LOCALIZE[31081] 2</label>
+		<onclick>Skin.ToggleSetting(otherdiffuse2)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse1)">Skin.ToggleSetting(otherdiffuse1)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse3)">Skin.ToggleSetting(otherdiffuse3)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse4)">Skin.ToggleSetting(otherdiffuse4)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse5)">Skin.ToggleSetting(otherdiffuse5)</onclick>					
+		<selected>Skin.HasSetting(otherdiffuse2)</selected>				
+	  </control>
+	  <control type="radiobutton" id="3">
+		<label>$LOCALIZE[31081] 3</label>
+		<onclick>Skin.ToggleSetting(otherdiffuse3)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse1)">Skin.ToggleSetting(otherdiffuse1)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse2)">Skin.ToggleSetting(otherdiffuse2)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse4)">Skin.ToggleSetting(otherdiffuse4)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse5)">Skin.ToggleSetting(otherdiffuse5)</onclick>					
+		<selected>Skin.HasSetting(otherdiffuse3)</selected>				
+	  </control>								
+	  <control type="radiobutton" id="4">
+		<label>$LOCALIZE[31081] 4</label>
+		<onclick>Skin.ToggleSetting(otherdiffuse4)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse1)">Skin.ToggleSetting(otherdiffuse1)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse2)">Skin.ToggleSetting(otherdiffuse2)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse3)">Skin.ToggleSetting(otherdiffuse3)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse5)">Skin.ToggleSetting(otherdiffuse5)</onclick>					
+		<selected>Skin.HasSetting(otherdiffuse4)</selected>				
+	  </control>
+	  <control type="radiobutton" id="5">
+		<label>$LOCALIZE[31081] 5</label>
+		<onclick>Skin.ToggleSetting(otherdiffuse5)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse1)">Skin.ToggleSetting(otherdiffuse1)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse2)">Skin.ToggleSetting(otherdiffuse2)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse3)">Skin.ToggleSetting(otherdiffuse3)</onclick>
+		<onclick condition="Skin.HasSetting(otherdiffuse4)">Skin.ToggleSetting(otherdiffuse4)</onclick>					
+		<selected>Skin.HasSetting(otherdiffuse5)</selected>				
+	  </control>	   
+    </control>
+  </controls>
+</window>
