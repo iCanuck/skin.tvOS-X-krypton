@@ -1,0 +1,16 @@
+<colors>
+    <color name="background">ff000000</color>
+    <color name="busybkgd">99000000</color>	
+    <color name="bandabianca">66555555</color>
+    <color name="bandamusica">bb555555</color>
+    <color name="maindim">f0444444</color>
+	<color name="darktextunfo">ffb1b1b1</color>
+    <color name="darktext">ffdedede</color>
+    <color name="invert1">ff000000</color>
+    <color name="invert2">ffffffff</color>	
+    <color name="infos">white</color>
+    <color name="dialog">ff444444</color>
+    <color name="notification">cd444444</color>
+    <color name="osdoverlay">ee1b1b1b</color>
+    <color name="kodi">ff12b2e7</color>
+</colors>

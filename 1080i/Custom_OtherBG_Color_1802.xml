@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1802">
+  <defaultcontrol>9000</defaultcontrol>
+  <include>DialogOpenClose</include>
+  <controls>
+
+	<control type="image" description="List back border">
+	  <centerleft>960</centerleft>
+	  <centertop>540</centertop>
+	  <width>738</width>
+	  <height>888</height>
+	  <aspectratio>stretch</aspectratio>
+	  <texture>$VAR[BorderColor]</texture>	  
+	</control>	
+	<control type="image" description="List back">
+		<centerleft>960</centerleft>
+		<centertop>540</centertop>
+		<width>802</width>
+		<height>966</height>
+		<aspectratio>stretch</aspectratio>
+		<include condition="IsEmpty(Skin.String(CustomBgDialog)) + !Skin.HasTheme(White)">DialogTexture</include>
+		<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | Skin.HasTheme(White)">DialogTextureBG</include>	
+	</control>	
+	<control type="image" description="List back diffuse">
+		<centerleft>960</centerleft>
+		<centertop>540</centertop>
+		<width>802</width>
+		<height>966</height>
+		<aspectratio>stretch</aspectratio>
+		<texture border="50" colordiffuse="$VAR[diffusedialog]" diffuse="images/DialogDiffuse.png">images/whitebg.png</texture>
+	</control> 
+  
+<!--  
+    <control type="image" description="List back">
+      <centerleft>960</centerleft>
+      <centertop>540</centertop>
+      <width>802</width>
+      <height>640</height>
+      <aspectratio>stretch</aspectratio>
+      <texture border="50">$VAR[ContextMenu]</texture>
+      <!--colordiffuse>dialog</colordiffuse>
+    </control>
+-->
+    <control type="grouplist" id="9000">
+      <centertop>528</centertop>
+      <height>780</height>
+      <align>center</align>
+      <include>DialogGLs</include> 
+	  <control type="label" id="99" description="Dialog heading">
+		<width>525</width>
+		<height>112</height>
+		<label>$LOCALIZE[31090]</label>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>size30</font>
+		<!--textcolor>50details</textcolor-->
+	  </control>	  
+	  <control type="radiobutton" id="1">
+		<label>$LOCALIZE[13343]</label>
+		<onclick>Skin.ToggleSetting(Red)</onclick>		
+		<onclick condition="Skin.HasSetting(Orange-OtherBG)">Skin.ToggleSetting(Orange-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Yellow-OtherBG)">Skin.ToggleSetting(Yellow-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Green-OtherBG)">Skin.ToggleSetting(Green-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Blue-OtherBG)">Skin.ToggleSetting(Blue-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Indigo-OtherBG)">Skin.ToggleSetting(Indigo-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Violet-OtherBG)">Skin.ToggleSetting(Violet-OtherBG)</onclick>
+		<onclick condition="!IsEmpty(Skin.String(OtherBGcolor))">Skin.Reset(OtherBGcolor)</onclick>		
+		<selected>Skin.HasSetting(Red)</selected>				
+	  </control>
+	  <control type="radiobutton" id="2">
+		<label>$LOCALIZE[13342]</label>
+		<onclick>Skin.ToggleSetting(Orange-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Red)">Skin.ToggleSetting(Red)</onclick>		
+		<onclick condition="Skin.HasSetting(Yellow-OtherBG)">Skin.ToggleSetting(Yellow-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Green-OtherBG)">Skin.ToggleSetting(Green-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Blue-OtherBG)">Skin.ToggleSetting(Blue-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Indigo-OtherBG)">Skin.ToggleSetting(Indigo-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Violet-OtherBG)">Skin.ToggleSetting(Violet-OtherBG)</onclick>
+		<onclick condition="!IsEmpty(Skin.String(OtherBGcolor))">Skin.Reset(OtherBGcolor)</onclick>		
+		<selected>Skin.HasSetting(Orange-OtherBG)</selected>				
+	  </control>
+	  <control type="radiobutton" id="3">
+		<label>$LOCALIZE[743]</label>
+		<onclick>Skin.ToggleSetting(Yellow-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Red)">Skin.ToggleSetting(Red)</onclick>		
+		<onclick condition="Skin.HasSetting(Orange-OtherBG)">Skin.ToggleSetting(Orange-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Green-OtherBG)">Skin.ToggleSetting(Green-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Blue-OtherBG)">Skin.ToggleSetting(Blue-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Indigo-OtherBG)">Skin.ToggleSetting(Indigo-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Violet-OtherBG)">Skin.ToggleSetting(Violet-OtherBG)</onclick>
+		<onclick condition="!IsEmpty(Skin.String(OtherBGcolor))">Skin.Reset(OtherBGcolor)</onclick>		
+		<selected>Skin.HasSetting(Yellow-OtherBG)</selected>				
+	  </control>
+	  <control type="radiobutton" id="4">
+		<label>$LOCALIZE[13341]</label>
+		<onclick>Skin.ToggleSetting(Green-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Red)">Skin.ToggleSetting(Red)</onclick>		
+		<onclick condition="Skin.HasSetting(Orange-OtherBG)">Skin.ToggleSetting(Orange-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Yellow-OtherBG)">Skin.ToggleSetting(Yellow-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Blue-OtherBG)">Skin.ToggleSetting(Blue-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Indigo-OtherBG)">Skin.ToggleSetting(Indigo-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Violet-OtherBG)">Skin.ToggleSetting(Violet-OtherBG)</onclick>
+		<onclick condition="!IsEmpty(Skin.String(OtherBGcolor))">Skin.Reset(OtherBGcolor)</onclick>		
+		<selected>Skin.HasSetting(Green-OtherBG)</selected>				
+	  </control>
+	  <control type="radiobutton" id="5">
+		<label>$LOCALIZE[762]</label>
+		<onclick>Skin.ToggleSetting(Blue-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Red)">Skin.ToggleSetting(Red)</onclick>		
+		<onclick condition="Skin.HasSetting(Orange-OtherBG)">Skin.ToggleSetting(Orange-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Yellow-OtherBG)">Skin.ToggleSetting(Yellow-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Green-OtherBG)">Skin.ToggleSetting(Green-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Indigo-OtherBG)">Skin.ToggleSetting(Indigo-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Violet-OtherBG)">Skin.ToggleSetting(Violet-OtherBG)</onclick>
+		<onclick condition="!IsEmpty(Skin.String(OtherBGcolor))">Skin.Reset(OtherBGcolor)</onclick>			
+		<selected>Skin.HasSetting(Blue-OtherBG)</selected>				
+	  </control>
+	  <control type="radiobutton" id="6">
+		<label>$LOCALIZE[31088]</label>
+		<onclick>Skin.ToggleSetting(Indigo-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Red)">Skin.ToggleSetting(Red)</onclick>		
+		<onclick condition="Skin.HasSetting(Orange-OtherBG)">Skin.ToggleSetting(Orange-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Yellow-OtherBG)">Skin.ToggleSetting(Yellow-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Green-OtherBG)">Skin.ToggleSetting(Green-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Blue-OtherBG)">Skin.ToggleSetting(Blue-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Violet-OtherBG)">Skin.ToggleSetting(Violet-OtherBG)</onclick>
+		<onclick condition="!IsEmpty(Skin.String(OtherBGcolor))">Skin.Reset(OtherBGcolor)</onclick>			
+		<selected>Skin.HasSetting(Indigo-OtherBG)</selected>				
+	  </control>
+	  <control type="radiobutton" id="7">
+		<label>$LOCALIZE[31089]</label>
+		<onclick>Skin.ToggleSetting(Violet-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Red)">Skin.ToggleSetting(Red)</onclick>		
+		<onclick condition="Skin.HasSetting(Orange-OtherBG)">Skin.ToggleSetting(Orange-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Yellow-OtherBG)">Skin.ToggleSetting(Yellow-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Green-OtherBG)">Skin.ToggleSetting(Green-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Blue-OtherBG)">Skin.ToggleSetting(Blue-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Indigo-OtherBG)">Skin.ToggleSetting(Indigo-OtherBG)</onclick>
+		<onclick condition="!IsEmpty(Skin.String(OtherBGcolor))">Skin.Reset(OtherBGcolor)</onclick>			
+		<selected>Skin.HasSetting(Violet-OtherBG)</selected>				
+	  </control>
+	  <control type="radiobutton" id="8">
+		<label>$LOCALIZE[20190]</label>
+		<onclick condition="IsEmpty(Skin.String(OtherBGcolor))">Skin.SetString(OtherBGcolor)</onclick>
+		<onclick condition="Skin.HasSetting(Red)">Skin.ToggleSetting(Red)</onclick>		
+		<onclick condition="Skin.HasSetting(Orange-OtherBG)">Skin.ToggleSetting(Orange-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Yellow-OtherBG)">Skin.ToggleSetting(Yellow-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Green-OtherBG)">Skin.ToggleSetting(Green-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Blue-OtherBG)">Skin.ToggleSetting(Blue-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Indigo-OtherBG)">Skin.ToggleSetting(Indigo-OtherBG)</onclick>
+		<onclick condition="Skin.HasSetting(Violet-OtherBG)">Skin.ToggleSetting(Violet-OtherBG)</onclick>
+		<onclick condition="!IsEmpty(Skin.String(OtherBGcolor))">Skin.Reset(OtherBGcolor)</onclick>		
+		<selected>!IsEmpty(Skin.String(OtherBGcolor))</selected>				
+	  </control>	  
+    </control>
+  </controls>
+</window>
