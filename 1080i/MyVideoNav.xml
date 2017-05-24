@@ -45,6 +45,34 @@
         <control type="group" description="Side menu 9000 group">
             <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
             <include>DialogOpenCloseVisible</include>
+			
+			<control type="image" description="List back border">
+			  <centerleft>960</centerleft>
+			  <centertop>540</centertop>
+			  <width>738</width>
+			  <height>908</height>
+			  <aspectratio>stretch</aspectratio>
+			  <texture>$VAR[BorderColor]</texture>	  
+			</control>	
+			<control type="image" description="List back">
+				<centerleft>960</centerleft>
+				<centertop>540</centertop>
+				<width>802</width>
+				<height>986</height>
+				<aspectratio>stretch</aspectratio>
+				<include condition="IsEmpty(Skin.String(CustomBgDialog)) + !Skin.HasTheme(White)">DialogTexture</include>
+				<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | Skin.HasTheme(White)">DialogTextureBG</include>	
+			</control>	
+			<control type="image" description="List back diffuse">
+				<centerleft>960</centerleft>
+				<centertop>540</centertop>
+				<width>802</width>
+				<height>986</height>
+				<aspectratio>stretch</aspectratio>
+				<texture border="50" colordiffuse="$VAR[diffusedialog]" diffuse="images/DialogDiffuse.png">images/whitebg.png</texture>
+			</control>  
+			
+<!--			
             <control type="image" description="List back">
                 <centerleft>960</centerleft>
                 <centertop>540</centertop>
@@ -52,8 +80,9 @@
                 <height>906</height>
                 <aspectratio>stretch</aspectratio>
                 <texture border="50">$VAR[ContextMenu]</texture>
-                <!--colordiffuse>dialog</colordiffuse-->
+                <!--colordiffuse>dialog</colordiffuse>
             </control>
+-->			
             <control type="grouplist" id="9000">
                 <height>878</height>
                 <align>center</align>

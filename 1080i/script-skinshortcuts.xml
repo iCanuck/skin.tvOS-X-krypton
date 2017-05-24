@@ -10,11 +10,11 @@
             <control type="panel" id="211">
                 <width>1800</width>
                 <height>980</height>
-                <top>100</top>
+                <top>120</top>
                 <left>60</left>
                 <onleft>noop</onleft>
                 <onright>noop</onright>
-                <onup>noop</onup>
+                <onup>300</onup>
                 <ondown>noop</ondown>
                 <scrolltime tween="sine" easing="inout">280</scrolltime>
                 <itemlayout height="290" width="360">
@@ -114,17 +114,32 @@
             </control>
 			<include condition="!Skin.HasSetting(HomeZoom)">HomeSliderCustom</include>			
         </control>
-		
-		
-<!--		
-
-        <control type="grouplist" id="300">
-            <top>20</top>
-            <width>1920</width>
+        <control type="grouplist" id="300" description="Top Options">
+			<!--visible allowhiddenfocus="true">Control.HasFocus(300)</visible-->
+			<centerleft>960</centerleft>
+            <top>40</top>
+            <width>600</width>
             <ondown>211</ondown>
-            <onup>111</onup>
+            <onup>noop</onup>
             <align>center</align>
             <orientation>horizontal</orientation>
+            <control type="button" id="404">
+				<!--animation effect="zoom" start="100" end="116" time="120" center="180,275" tween="Back" easing="Out">Focus</animation>
+				<animation effect="zoom" start="116" end="100" time="120" center="180,275">unFocus</animation-->	
+				<centerleft>960</centerleft>
+				<include>DialogButt</include>
+                <description>Viewtype</description>			
+                <onclick>SetProperty(chooseProperty,viewtype)</onclick>
+				<onclick>SendClick(404)</onclick>
+                <label>Shelf Viewtype</label>
+            </control>
+            <!--control type="button" id="301">
+                <visible>Integer.IsLessOrEqual(Container(211).NumItems,29)</visible>
+                <description>Add a new shortcut</description>
+                <include>osdtopbutton</include>
+                <onclick></onclick>
+                <label>$ADDON[script.skinshortcuts 32000]</label>
+            </control>
             <!--<control type="togglebutton" id="313">-->
             <!--<usealttexture>String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),False)</usealttexture>-->
             <!--<description>Move shortcut up</description>-->
@@ -132,17 +147,14 @@
             <!--<onclick>SetFocus(211)</onclick>-->
             <!--<label>$LOCALIZE[24022]</label>-->
             <!--<altlabel>$LOCALIZE[24021]</altlabel>-->
-            <!--</control>-->
-			
-<!--			
-			
-            <control type="button" id="303">
+            <!--</control>-->			
+            <!--<control type="button" id="303">
                 <description>Move shortcut up</description>
                 <include>osdtopbutton</include>
                 <onclick>noop</onclick>
                 <label>$ADDON[script.skinshortcuts 32002]</label>
             </control>
-            <control type="button" id="304">
+            <!--<control type="button" id="304">
                 <description>Move shortcut down</description>
                 <include>osdtopbutton</include>
                 <onclick>noop</onclick>
@@ -166,16 +178,6 @@
             <!--<onclick>noop</onclick>-->
             <!--<label>$ADDON[script.skinshortcuts 32027]</label>-->
             <!--</control>-->
-			
-<!--			
-			
-            <control type="button" id="301">
-                <visible>Integer.IsLessOrEqual(Container(211).NumItems,29)</visible>
-                <description>Add a new shortcut</description>
-                <include>osdtopbutton</include>
-                <onclick></onclick>
-                <label>$ADDON[script.skinshortcuts 32000]</label>
-            </control>
             <!--<control type="button" id="401">-->
             <!--<description>function</description>-->
             <!--<include>osdtopbutton</include>-->
@@ -188,25 +190,19 @@
             <!--<onclick>noop</onclick>-->
             <!--<label>$ADDON[script.skinshortcuts 32001]</label>-->
             <!--</control>-->
-			
-<!--			
-			
-            <control type="button" id="313">
+            <!--<control type="button" id="313">
                 <description>Disable shortcut</description>
                 <include>osdtopbutton</include>
                 <onclick>noop</onclick>
                 <label>$LOCALIZE[24021]</label>
             </control>
-            <control type="button" id="308">
+            <!--<control type="button" id="308">
                 <description>Reset shortcuts</description>
                 <include>osdtopbutton</include>
                 <onclick>noop</onclick>
                 <label>$ADDON[script.skinshortcuts 32028]</label>
-            </control>
+            </control-->
         </control>
-		
--->		
-		
         <control type="image">
             <width>480</width>
             <height>80</height>

@@ -37,7 +37,7 @@
                             <left>80</left>
                             <width>300</width>
                             <height>300</height>
-                            <texture fallback="defaultaddon.png">$INFO[ListItem.Icon]</texture>
+                            <texture fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="textbox" description="Label2">
                             <left>80</left>
@@ -66,7 +66,7 @@
                                 <left>80</left>
                                 <width>300</width>
                                 <height>300</height>
-                                <texture fallback="defaultaddon.png">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
                             </control>
                             <control type="textbox" description="Label2">
                                 <left>80</left>

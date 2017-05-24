@@ -10,7 +10,7 @@
 		<import addon="resource.images.tvOS-X" version="0.0.1"/>
 		<!--import addon="script.tvOS-X.backgrounds" version="1.0.0"/-->
     </requires>
-    <extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="1" debugging="true">
+    <extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="1" debugging="false">
         <res width="1920" height="1080" aspect="16:9" default="true" folder="1080i"/>
         <assets>
             <icon>icon.png</icon>

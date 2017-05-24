@@ -137,12 +137,12 @@
                 <font>size26</font>
                 <textcolor>infos</textcolor>
                 <label>$INFO[Container(5000).ListItem.Title][CR][CR]$INFO[Container(5000).ListItem.Plot]</label>
-            </control>
+            </control>		
             <control type="grouplist" description="detailedinfos">
-                <visible>!ListItem.IsFolder | !Container.Content(movies)</visible>
+                <visible>[!ListItem.IsFolder | !Container.Content(movies)] + Control.HasFocus(501)</visible>
                 <left>300</left>
                 <top>770</top>
-                <height>260</height>
+                <height>300</height>
                 <width>600</width>
                 <align>left</align>
                 <itemgap>13</itemgap>

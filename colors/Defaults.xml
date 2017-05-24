@@ -1,6 +1,6 @@
 <colors>
     <color name="background">ff000000</color>
-    <color name="busybkgd">99000000</color>	
+    <color name="busybkgd">bb000000</color>	
     <color name="bandabianca">66555555</color>
     <color name="bandamusica">bb555555</color>
     <color name="maindim">f0444444</color>

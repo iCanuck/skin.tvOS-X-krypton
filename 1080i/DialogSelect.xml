@@ -12,10 +12,10 @@
     <control type="list" id="3">
       <left>1020</left>
       <top>150</top>
-      <width>802</width>
+      <width>810</width>
       <height>888</height>
       <onleft>666</onleft>
-      <onright>60</onright>
+      <onright>666</onright>
       <onup>3</onup>
       <ondown>3</ondown>
       <pagecontrol>60</pagecontrol>
@@ -25,10 +25,10 @@
     <control type="list" id="6">
       <left>1020</left>
       <top>140</top>
-      <width>802</width>
+      <width>810</width>
       <height>886</height>
       <onleft>666</onleft>
-      <onright>60</onright>
+      <onright>666</onright>
       <onup>6</onup>
       <ondown>6</ondown>
       <pagecontrol>60</pagecontrol>
@@ -49,10 +49,14 @@
       <centerleft>520</centerleft>
       <bottom>60</bottom>
       <height>100</height>
-      <onleft>3</onleft>
-      <onright>3</onright>
-      <onup>3</onup>
-      <ondown>3</ondown>
+      <onleft condition="Control.IsVisible(3)">3</onleft>
+      <onright condition="Control.IsVisible(3)">3</onright>
+      <onup condition="Control.IsVisible(3)">3</onup>
+      <ondown condition="Control.IsVisible(3)">3</ondown>
+      <onleft condition="Control.IsVisible(6)">6</onleft>
+      <onright condition="Control.IsVisible(6)">6</onright>
+      <onup condition="Control.IsVisible(6)">6</onup>
+      <ondown condition="Control.IsVisible(6)">6</ondown>	  
       <itemgap>15</itemgap>
       <orientation>horizontal</orientation>
       <align>center</align>
@@ -62,7 +66,7 @@
         <font>size36</font>
         <label>-</label>
       </control>
-      <control type="button" id="7" description="Manual Get more button">
+      <control type="button" id="7" description="Cancel button">
         <height>80</height>
         <width>400</width>
         <font>size36</font>

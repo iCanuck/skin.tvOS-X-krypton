@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-
+	<variable name="ShelfMenu">
+		<value condition="Control.HasFocus(9010)">$INFO[Container(9010).ListItem.Property(list)]</value>
+		<value>$INFO[Container(9000).ListItem.Property(list)]</value>	
+    </variable>	
 
 	<variable name="BorderColor">
 		<value condition="Skin.HasTheme(White)">borders/DialogBorder-Light.png</value>
 		<value>borders/DialogBorder-Dark.png</value>
     </variable>	
-
 
 	<variable name="HomeColor">
 		<value condition="Skin.HasSetting(Red-HomeBG)">FF7A0000</value>

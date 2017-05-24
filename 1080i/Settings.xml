@@ -21,7 +21,7 @@
                 <onright>noop</onright>
                 <onup>50</onup>
                 <ondown>50</ondown>
-                <itemgap>14</itemgap>
+                <itemgap>12</itemgap>
                 <control type="button" id="6">
                     <width>840</width>
                     <align>left</align>

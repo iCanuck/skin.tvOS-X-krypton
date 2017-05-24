@@ -17,7 +17,16 @@
     | String.IsEqual(Container(9000).ListItem.Property(defaultID),movies)
     | String.IsEqual(Container(9000).ListItem.Property(defaultID),music)
     | String.IsEqual(Container(9000).ListItem.Property(defaultID),weather)
-        | String.IsEqual(Container(9000).ListItem.Property(defaultID),livetv)]
+        | String.IsEqual(Container(9000).ListItem.Property(defaultID),livetv) | Control.HasFocus(321) | Control.HasFocus(9010)]
     </expression>
 
+    <expression name="321visibility">![String.IsEqual(Container(9010).ListItem.Property(defaultID),addons)
+    | String.IsEqual(Container(9010).ListItem.Property(defaultID),addons)
+    | String.IsEqual(Container(9010).ListItem.Property(defaultID),episodes)
+    | String.IsEqual(Container(9010).ListItem.Property(defaultID),movies)
+    | String.IsEqual(Container(9010).ListItem.Property(defaultID),music)
+    | String.IsEqual(Container(9010).ListItem.Property(defaultID),weather)
+        | String.IsEqual(Container(9010).ListItem.Property(defaultID),livetv) | Control.HasFocus(320) | Control.HasFocus(9000)]
+    </expression>	
+	
 </includes>

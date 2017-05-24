@@ -51,46 +51,46 @@
 		<height>256</height>
 		<texture colordiffuse="invert2">images/HomeSlider.png</texture>
 		<aspectratio>stretch</aspectratio>
-		<animation condition="Container(9000).Column(0)" effect="slide" end="0,0" time="200">Conditional</animation>
-		<animation condition="Container(9000).Column(1)" effect="slide" end="360,0" time="200">Conditional</animation>
-		<animation condition="Container(9000).Column(2)" effect="slide" end="720,0" time="200">Conditional</animation>
-		<animation condition="Container(9000).Column(3)" effect="slide" end="1080,0" time="200">Conditional</animation>
-		<animation condition="Container(9000).Column(4)" effect="slide" end="1440,0" time="200">Conditional</animation>
-		<animation condition="Container(9000).Row(0)" effect="slide" end="0,0" time="200">Conditional</animation>		
-		<animation condition="Container(9000).Row(1)" effect="slide" end="0,24" time="200">Conditional</animation>		
-		<animation condition="Container(9000).Row(2)" effect="slide" end="0,49" time="200">Conditional</animation>		
-		<animation condition="Container(9000).Row(3)" effect="slide" end="0,74" time="200">Conditional</animation>		
-		<animation condition="Container(9000).Row(4)" effect="slide" end="0,69" time="200">Conditional</animation>	
-		<animation condition="Container(9000).Row(5)" effect="slide" end="0,65" time="200">Conditional</animation>
-		<!--animation condition="Container(9000).Row(6)" effect="slide" end="0,199" time="200">Conditional</animation>	
-		<animation condition="Container(9000).Row(7)" effect="slide" end="0,489" time="200">Conditional</animation>
-		<animation condition="Container(9000).Row(8)" effect="slide" end="0,779" time="200">Conditional</animation-->		
+		<animation condition="Container(9000).Column(0)" effect="slide" end="0,0" time="190">Conditional</animation>
+		<animation condition="Container(9000).Column(1)" effect="slide" end="360,0" time="190">Conditional</animation>
+		<animation condition="Container(9000).Column(2)" effect="slide" end="720,0" time="190">Conditional</animation>
+		<animation condition="Container(9000).Column(3)" effect="slide" end="1080,0" time="190">Conditional</animation>
+		<animation condition="Container(9000).Column(4)" effect="slide" end="1440,0" time="190">Conditional</animation>
+		<animation condition="Container(9000).Row(0)" effect="slide" end="0,0" time="190">Conditional</animation>		
+		<animation condition="Container(9000).Row(1)" effect="slide" end="0,24" time="190">Conditional</animation>		
+		<animation condition="Container(9000).Row(2)" effect="slide" end="0,49" time="190">Conditional</animation>		
+		<animation condition="Container(9000).Row(3)" effect="slide" end="0,74" time="190">Conditional</animation>		
+		<animation condition="Container(9000).Row(4)" effect="slide" end="0,69" time="190">Conditional</animation>	
+		<animation condition="Container(9000).Row(5)" effect="slide" end="0,65" time="190">Conditional</animation>
+		<!--animation condition="Container(9000).Row(6)" effect="slide" end="0,199" time="190">Conditional</animation>	
+		<animation condition="Container(9000).Row(7)" effect="slide" end="0,489" time="190">Conditional</animation>
+		<animation condition="Container(9000).Row(8)" effect="slide" end="0,779" time="190">Conditional</animation-->		
 	  </control>	
     </include>
     <include name="HomeSliderCustom">
 	  <control type="image">
 		<visible>Control.HasFocus(211)</visible>
 		<!--animation condition="!Container(9000).Row(0)" effect="slide" start="0,0" end="0,-629" time="220">Conditonal</animation-->
-		<centertop>230</centertop>
+		<centertop>250</centertop>
         <centerleft>241</centerleft>
 		<width>367</width>
 		<height>256</height>
 		<texture colordiffuse="invert2">images/HomeSlider.png</texture>
 		<aspectratio>stretch</aspectratio>
-		<animation condition="Container(211).Column(0)" effect="slide" end="0,0" time="200">Conditional</animation>
-		<animation condition="Container(211).Column(1)" effect="slide" end="360,0" time="200">Conditional</animation>
-		<animation condition="Container(211).Column(2)" effect="slide" end="720,0" time="200">Conditional</animation>
-		<animation condition="Container(211).Column(3)" effect="slide" end="1080,0" time="200">Conditional</animation>
-		<animation condition="Container(211).Column(4)" effect="slide" end="1440,0" time="200">Conditional</animation>
-		<animation condition="Container(211).Row(0)" effect="slide" end="0,0" time="200">Conditional</animation>		
-		<animation condition="Container(211).Row(1)" effect="slide" end="0,290" time="200">Conditional</animation>		
-		<animation condition="Container(211).Row(2)" effect="slide" end="0,580" time="200">Conditional</animation>		
-		<animation condition="Container(211).Row(3)" effect="slide" end="0,870" time="200">Conditional</animation>		
-		<animation condition="Container(211).Row(4)" effect="slide" end="0,1160" time="200">Conditional</animation>	
-		<animation condition="Container(211).Row(5)" effect="slide" end="0,1450" time="200">Conditional</animation>
-		<!--animation condition="Container(9000).Row(6)" effect="slide" end="0,199" time="200">Conditional</animation>	
-		<animation condition="Container(9000).Row(7)" effect="slide" end="0,489" time="200">Conditional</animation>
-		<animation condition="Container(9000).Row(8)" effect="slide" end="0,779" time="200">Conditional</animation-->		
+		<animation condition="Container(211).Column(0)" effect="slide" end="0,0" time="190">Conditional</animation>
+		<animation condition="Container(211).Column(1)" effect="slide" end="360,0" time="190">Conditional</animation>
+		<animation condition="Container(211).Column(2)" effect="slide" end="720,0" time="190">Conditional</animation>
+		<animation condition="Container(211).Column(3)" effect="slide" end="1080,0" time="190">Conditional</animation>
+		<animation condition="Container(211).Column(4)" effect="slide" end="1440,0" time="190">Conditional</animation>
+		<animation condition="Container(211).Row(0)" effect="slide" end="0,0" time="190">Conditional</animation>		
+		<animation condition="Container(211).Row(1)" effect="slide" end="0,290" time="190">Conditional</animation>		
+		<animation condition="Container(211).Row(2)" effect="slide" end="0,580" time="190">Conditional</animation>		
+		<animation condition="Container(211).Row(3)" effect="slide" end="0,870" time="190">Conditional</animation>		
+		<animation condition="Container(211).Row(4)" effect="slide" end="0,1160" time="190">Conditional</animation>	
+		<animation condition="Container(211).Row(5)" effect="slide" end="0,1450" time="190">Conditional</animation>
+		<!--animation condition="Container(9000).Row(6)" effect="slide" end="0,199" time="190">Conditional</animation>	
+		<animation condition="Container(9000).Row(7)" effect="slide" end="0,489" time="190">Conditional</animation>
+		<animation condition="Container(9000).Row(8)" effect="slide" end="0,779" time="190">Conditional</animation-->		
 	  </control>	
     </include>	
 	<include name="HomeZoomTop">

@@ -24,8 +24,8 @@
         <animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
     </include>
     <include name="OpenClose">
-        <animation effect="fade" time="150">WindowOpen</animation>
-        <animation effect="fade" time="150">WindowClose</animation>
+        <animation effect="fade" time="120">WindowOpen</animation>
+        <animation effect="fade" time="120">WindowClose</animation>
     </include>
     <include name="HomeOpenClose">
         <animation type="WindowOpen" reversible="false">
@@ -49,8 +49,8 @@
     </include>
     <include name="DialogOpenClose">
         <animation type="WindowOpen">
-            <effect type="fade" start="0" end="100" time="240" />
-            <effect type="zoom" tween="cubic" easing="out" start="30" end="100" center="960,540" time="240" />
+            <effect type="fade" start="0" end="100" time="200" />
+            <effect type="zoom" tween="cubic" easing="out" start="30" end="100" center="960,540" time="200" />
         </animation>
         <animation type="WindowClose">
             <effect type="fade" start="100" end="0" time="140" />
@@ -60,7 +60,7 @@
     <include name="DialogOpenCloseVisible">
         <animation type="Visible">
             <effect type="fade" start="0" end="100" time="240" />
-            <effect type="zoom" tween="cubic" easing="out" start="30" end="100" center="960,540" time="240" />
+            <effect type="zoom" tween="cubic" easing="out" start="30" end="100" center="960,540" time="200" />
         </animation>
         <animation type="Hidden">
             <effect type="fade" start="100" end="0" time="140" />
@@ -871,6 +871,16 @@
                     <height>200</height>
                     <texture>$INFO[ListItem.Icon]</texture>
                 </control>
+				<control type="image">
+					<visible>!Skin.HasSetting(HomeZoom)</visible>						
+					<animation effect="fade" start="0" end="100" time="120">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="120">unFocus</animation>					
+                    <left>80</left>
+                    <width>302</width>
+                    <height>202</height>
+					<texture background="true">borders/SquareBorder.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>				
                 <control type="textbox" description="Label2">
                     <left>80</left>
                     <top>210</top>
@@ -925,12 +935,12 @@
     <include name="Clock">
         <control type="label">
             <visible>!System.Date(04-01,04-01) + !Skin.HasSetting(clock)</visible>
-            <right>20</right>
-            <top>20</top>
+            <right>14</right>
+            <top>14</top>
             <width>500</width>
             <height>25</height>
             <align>right</align>
-            <font>size28</font>
+            <font>size30</font>
             <shadowcolor>-</shadowcolor>
             <textcolor>white</textcolor>
             <label>$INFO[System.Time]</label>

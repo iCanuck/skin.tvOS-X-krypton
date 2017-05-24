@@ -62,7 +62,7 @@
                             <align>left</align>
                             <width>630</width>
                             <include>BigListDetails</include>
-                            <label>$INFO[ListItem.Duration,, $LOCALIZE[31038]]$INFO[ListItem.Premiered, • $LOCALIZE[31039]]</label>
+                            <label>$INFO[ListItem.Duration,, $LOCALIZE[31038]]$INFO[ListItem.Premiered, • $LOCALIZE[31024] : ]</label>
                         </control>
                     </itemlayout>
                     <focusedlayout width="802" height="111">
@@ -118,7 +118,7 @@
                                 <align>left</align>
                                 <width>630</width>
                                 <include>BigListDetails</include>
-                                <label>$INFO[ListItem.Duration,, $LOCALIZE[31038]]$INFO[ListItem.Premiered, • $LOCALIZE[31039]]</label>
+                                <label>$INFO[ListItem.Duration,, $LOCALIZE[31038]]$INFO[ListItem.Premiered, • $LOCALIZE[31024] : ]</label>
                             </control>
                         </control>
                     </focusedlayout>

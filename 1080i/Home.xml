@@ -4,6 +4,7 @@
     <defaultcontrol always="true">9000</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;level=0)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=1)</onload>
     <include>HomeOpenClose</include>
     <controls>
         <include>HomeBackground</include>
@@ -46,8 +47,16 @@
             <textcolor>white</textcolor>
             <label>$LOCALIZE[31077]</label>
 		</control>
+		
+		
+		
+		
+		
+		
+		
+		
         <control type="button" id="9009">
-			<visible>!Player.HasVideo</visible>
+			<visible>!Player.HasVideo + !Control.HasFocus(9010)</visible>
             <include>homeanimation</include>
             <focusedcolor>white</focusedcolor>
             <include>ShelfFade</include>
@@ -98,6 +107,97 @@
             <onleft>noop</onleft>
             <onright>noop</onright>
         </control>
+		
+	
+		
+
+	
+<!-- SHELF MENU -- WIP -->		
+			<control type="panel" id="9010" description="Shelf Menu">
+				<!--visible>$EXP[320visibility]</visible-->
+				<visible allowhiddenfocus="true">Control.HasFocus(9010) | Control.HasFocus(321) </visible>
+				<!--visible>Control.HasFocus(321) | Control.HasFocus(9010)</visible-->
+				<left>80</left>
+				<bottom>980</bottom>
+				<width>1390</width>
+				<height>45</height>
+				<onleft>9001</onleft>
+				<onright>9001</onright>
+				<onup>noop</onup>
+				<ondown>321</ondown>
+				<!--onclick></onclick-->
+				<orientation>horizontal</orientation>
+				<scrolltime tween="sine" easing="inout">280</scrolltime>
+				<itemlayout height="45" width="300">
+					<control type="label">
+						<!--left>15</left-->
+						<width>300</width>
+						<height>45</height>
+						<align>left</align>
+						<aligny>center</aligny>					
+						<font>size38</font>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>false</scroll>
+						<textcolor>white</textcolor>
+					</control>
+				</itemlayout>				
+				<focusedlayout height="45" width="300">
+					<control type="label">
+						<!--left>15</left-->
+						<width>300</width>
+						<height>45</height>
+						<align>left</align>
+						<aligny>center</aligny>					
+						<font>size38</font>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<scroll>true</scroll>
+						<textcolor>white</textcolor>
+					</control>
+				</focusedlayout>
+				
+				
+				<content><include>skinshortcuts-submenu</include></content>
+				
+				
+				<!--
+				<content>$INFO[Container(9000).ListItem.Property(list)]</content>
+				-->
+				
+				
+			</control>				
+
+
+		
+<!--			
+			<content>
+
+				<!--include>skinshortcuts-submenu</include-->
+			
+<!-- SAMPLE				
+				<item id="404" description="AddonCustom">
+					<visible>!IsEmpty(Skin.String(HomeAddon.4.Label))</visible>
+					<thumb>$INFO[Skin.String(HomeAddon.4.Icon)]</thumb>
+					<label2>$INFO[system.addonicon(Skin.String(HomeAddon.4.Label))]</label2>
+					<label>$INFO[system.addonTitle(Skin.String(HomeAddon.4.Label))]</label>
+					<property name="color">icons/purple.png</property>
+					<onclick>SetFocus(9000)</onclick>
+				</item>
+				<item id="404" description="AddonCustom">
+					<visible>IsEmpty(Skin.String(HomeAddon.4.Label))</visible>
+					<thumb>DefaultAddon.png</thumb>
+					<label>+ $LOCALIZE[24000]</label>
+					<property name="color">icons/purple.png</property>
+					<onclick>Skin.SetAddon(HomeAddon.4.Label,xbmc.python.pluginsource)</onclick>
+					<onclick>Skin.Reset(HomeAddon.4.Icon)</onclick>
+				</item>			
+		
+			</content>
+		</control>				
+-->				
+	
+		
+	
+		
         <control type="panel" id="9000" description="ICONE">
             <include>HomePanelOpenClose</include>
             <include>homeanimation</include>
@@ -225,7 +325,8 @@
             <include>Favourites</include>
             <include>Livetv</include>
             <include>appstore_shelf</include>
-            <include>general</include>
+            <include>General</include>
+            <include>ShelfMenu</include>			
             <include>weather_shelf</include>
         </control>
         <control type="group" description="RSS">

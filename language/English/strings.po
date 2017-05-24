@@ -326,6 +326,10 @@ msgctxt "#31092"
 msgid "Dialog Background Color"
 msgstr "Dialog Background Color"
 
+msgctxt "#31093"
+msgid "Add shelf menu item"
+msgstr "Add shelf menu item"
+
 
 msgctxt "#31422"
 msgid "Movie Releases"

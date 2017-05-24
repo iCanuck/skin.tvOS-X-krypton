@@ -20,7 +20,8 @@
         <item control="401">$ADDON[script.skinshortcuts 32048]</item>	  <!-- Choose item for menu -->
         <item control="305">$ADDON[script.skinshortcuts 32025]</item>	  <!-- Set label -->
         <item control="306">$ADDON[script.skinshortcuts 32026]</item>	  <!-- Set thumbnail -->	
-        <item control="310">$ADDON[script.skinshortcuts 32045]</item>	  <!-- Set background -->		
+        <item control="310">$ADDON[script.skinshortcuts 32045]</item>	  <!-- Set background -->	
+        <item control="405">$LOCALIZE[31093]</item>	  					  <!-- Edit shelf menu -->	
         <item control="307">$ADDON[script.skinshortcuts 32027]</item>	  <!-- Change action -->
         <item control="302">$ADDON[script.skinshortcuts 32001]</item>	  <!-- Delete -->		
         <item control="303">$ADDON[script.skinshortcuts 32002]</item>	  <!-- Move Up -->
@@ -28,7 +29,12 @@
         <item control="313">$LOCALIZE[24021]</item>					 	  <!-- Disable -->		
         <item control="301">$ADDON[script.skinshortcuts 32000] item</item><!-- Add item -->
         <item control="308">$ADDON[script.skinshortcuts 32028]</item>	  <!-- Restore menu items -->		
-    </contextmenu>
+    </contextmenu>	
+	
+	<propertydefault property="viewtype">Posters</propertydefault>
+		<property property="viewtype">Posters</property>	
+		<property property="viewtype">Squares</property>
+		<property property="viewtype">Episodes</property>
 
     <!--onclick id="211">SetFocus(313)</onclick-->
 
