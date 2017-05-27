@@ -25,7 +25,14 @@
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
                     <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
                 </control>
-                <!--<control type="radiobutton" id="2">-->
+                <control type="button" id="2" description="Home Settings">
+                    <width>840</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31096]</label>
+                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
+                    <onclick>ActivateWindow(1707)</onclick>
+                </control>				
+                <!--<control type="radiobutton" id="">-->
                     <!--<width>840</width>-->
                     <!--<align>left</align>-->
                     <!--<label>$LOCALIZE[31051]</label>-->
@@ -33,31 +40,30 @@
                     <!--<selected>Skin.HasSetting(AddonsShelf_Custom)</selected>-->
                     <!--<onclick>ActivateWindow(1617)</onclick>-->
                 <!--</control>-->
-                <control type="button" id="3">
+                <control type="button" id="3" description="Bkgd Settings">
                     <width>840</width>
                     <align>left</align>
-                    <label>31062</label>
-                    <label2>$INFO[Skin.String(LyricPath)]</label2>
+                    <label>$LOCALIZE[31095]</label>
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>Skin.SetAddon(LyricPath,xbmc.python.lyrics)</onclick>
+                    <onclick>ActivateWindow(1706)</onclick>
                 </control>
-                <control type="radiobutton" id="4">
+                <control type="radiobutton" id="4" description="Fanart">				
                     <width>840</width>
                     <align>left</align>
-                    <label>31017</label>
+                    <label>$LOCALIZE[31075]</label>
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>Skin.ToggleSetting(clock)</onclick>
-                    <selected>!Skin.HasSetting(clock)</selected>
+                    <onclick>Skin.ToggleSetting(FanArt)</onclick>
+                    <selected>!Skin.HasSetting(FanArt)</selected>
                 </control>
-                <control type="radiobutton" id="5">
+                <control type="radiobutton" id="5" description="Shelf Fanart">				
                     <width>840</width>
                     <align>left</align>
-                    <label>$LOCALIZE[31044]</label>
+                    <label>$LOCALIZE[31094]</label>
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>Skin.ToggleSetting(ViewsMenuOff)</onclick>
-                    <selected>!Skin.HasSetting(ViewsMenuOff)</selected>
+                    <onclick>Skin.ToggleSetting(ShelfFanart)</onclick>
+                    <selected>!Skin.HasSetting(ShelfFanart)</selected>
                 </control>
-                <control type="radiobutton" id="9">
+                <control type="radiobutton" id="6" description="Fanart for Episodes">
                     <width>840</width>
                     <align>left</align>
                     <label>$LOCALIZE[31045]</label>
@@ -65,30 +71,22 @@
                     <onclick>Skin.ToggleSetting(epthumb)</onclick>
                     <selected>Skin.HasSetting(epthumb)</selected>
                 </control>
-                <control type="radiobutton" id="10">
+                <control type="radiobutton" id="7" description="Clock">
                     <width>840</width>
                     <align>left</align>
-                    <label>$LOCALIZE[31047]</label>
+                    <label>31017</label>
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>Skin.ToggleSetting(upcomingmovies)</onclick>
-                    <selected>Skin.HasSetting(upcomingmovies)</selected>
+                    <onclick>Skin.ToggleSetting(clock)</onclick>
+                    <selected>!Skin.HasSetting(clock)</selected>
                 </control>
-                <control type="radiobutton" id="11">
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31042]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>Skin.ToggleSetting(hidejump)</onclick>
-                    <selected>Skin.HasSetting(hidejump)</selected>
-                </control>
-                <control type="button" id="6">
+                <control type="button" id="8" description="Theme">
                     <width>840</width>
                     <align>left</align>
                     <label>$LOCALIZE[15111]:    $INFO[Skin.CurrentTheme]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
+                    <texturenofocus border="9" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
                     <onclick>Skin.Theme(1)</onclick>
                 </control>
-                <control type="button" id="7">
+                <control type="button" id="9" description="Reset SkinSettings">
                     <width>840</width>
                     <align>left</align>
                     <label>$LOCALIZE[31036]</label>
@@ -97,20 +95,25 @@
                     <onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
                     <onclick>XBMC.ReloadSkin()</onclick>
                 </control>
-                <control type="button" id="8">
+                <control type="button" id="10" description="Debug">
                     <width>840</width>
                     <align>left</align>
                     <label>$LOCALIZE[31068]</label>
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
                     <onclick>Skin.ToggleDebug</onclick>
-                </control>				
-                <control type="button" id="20">
+                </control>	
+                <control type="button" id="11" description="Adv. Settings">
                     <width>840</width>
                     <align>left</align>
-                    <label>Advanced Skin Settings</label>
+                    <label>$LOCALIZE[31098] $LOCALIZE[31097]</label>
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>ActivateWindow(1701)</onclick>
-                </control>									
+					<onclick>ActivateWindow(1701)</onclick>			
+					<!--
+					<onclick condition="!String.IsEqual(Skin.String(passkey),1234)">Skin.SetNumeric(passkey)</onclick>			
+					<onclick>ActivateWindow(1701)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(passkey),1234)">ActivateWindow(1701)</onclick>					
+					-->
+                </control>	
             </control>
         </control>
         <control type="image">
@@ -122,7 +125,7 @@
         </control>
         <control type="label">
             <include>Heading</include>
-            <label>$LOCALIZE[20077]</label>
+            <label>$LOCALIZE[31097]</label>
         </control>
     </controls>
 </window>

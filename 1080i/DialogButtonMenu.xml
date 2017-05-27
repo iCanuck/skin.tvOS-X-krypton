@@ -18,8 +18,8 @@
 		<width>802</width>
 		<height>766</height>
 		<aspectratio>stretch</aspectratio>
-		<include condition="IsEmpty(Skin.String(CustomBgDialog)) + !Skin.HasTheme(White)">DialogTexture</include>
-		<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | Skin.HasTheme(White)">DialogTextureBG</include>	
+		<include condition="IsEmpty(Skin.String(CustomBgDialog)) + IsEmpty(Skin.String(CustomBgHome)) + !Skin.HasTheme(White)">DialogTexture</include>
+		<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(White)">DialogTextureBG</include>
 	</control>	
 	<control type="image" description="List back diffuse">
 		<centerleft>960</centerleft>
@@ -74,10 +74,13 @@
       <align>center</align>
       <include>DialogGLs</include>
       <control type="button" id="1" description="Exit button">
+		<visible>!System.HasAddon(service.libreelec.settings)</visible>
         <include>DialogButt</include>
         <onclick>XBMC.Quit()</onclick>
         <label>13009</label>
       </control>
+	  
+	  
       <control type="button" id="2" description="Shutdown button">
         <enable>System.CanPowerDown</enable>
         <include>DialogButt</include>
@@ -107,11 +110,12 @@
         <onclick>AlarmClock(Timer,Quit())</onclick>
         <label>timer</label>
       </control>
-      <control type="button" id="7" description="TimerOff">
+      <!--control type="button" id="7" description="Settings">
+		<visible>Control.IsVisible(Container(9000).ListItem.Property(defaultID),settings)</visible>
         <include>DialogButt</include>
         <onclick>ActivateWindow(Settings)</onclick>
         <label>5</label>
-      </control>
+      </control-->
     </control>
   </controls>
 </window>

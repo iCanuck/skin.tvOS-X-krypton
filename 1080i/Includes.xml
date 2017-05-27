@@ -407,9 +407,9 @@
         <aligny>bottom</aligny>
     </include>
     <include name="osdtopbutton">
-        <animation>Focus</animation>
-        <animation>unFocus</animation>
-        <font>font10</font>
+		<animation effect="zoom" start="100" end="120" time="150" center="auto" tween="Back" easing="Out">Focus</animation>
+		<animation effect="zoom" start="120" end="100" time="170" center="auto">unFocus</animation>	
+        <font>size22</font>
         <width>auto</width>
         <textcolor>darktextunfo</textcolor>
         <focusedcolor>white</focusedcolor>
@@ -500,16 +500,16 @@
             <centerleft>960</centerleft>
             <width>2020</width>
             <height>140</height>
-            <colordiffuse>osdoverlay</colordiffuse>
+            <colordiffuse>$VAR[bannercolor2]</colordiffuse>
             <texture border="8">images/White.png</texture>
         </control>
         <control type="grouplist" id="101" description="OSD Options">
             <top>35</top>
             <width>1920</width>
             <height>140</height>
-            <itemgap>0</itemgap>
-            <onleft>noop</onleft>
-            <onright>noop</onright>
+            <itemgap>16</itemgap>
+            <onleft>101</onleft>
+            <onright>101</onright>
             <onup>100</onup>
             <ondown condition="Control.HasFocus(704)">9000</ondown>
             <ondown condition="Control.HasFocus(703)">10000</ondown>
@@ -519,13 +519,13 @@
             <align>center</align>
             <scrolltime>240</scrolltime>
             <control type="button" id="706" description="Info">
-                <font>size36B</font>
+                <font>size36</font>
                 <include>osdtopbutton</include>
                 <label>29915</label>
                 <!--<onclick>SetFocus(100,2)</onclick>-->
             </control>
             <control type="button" id="704" description="audio and subtitles">
-                <font>size36B</font>
+                <font>size36</font>
                 <include>osdtopbutton</include>
                 <label>$LOCALIZE[292] &amp; $LOCALIZE[287]</label>
                 <onclick>SetFocus(100,2)</onclick>
@@ -533,28 +533,28 @@
                 <onclick>ActivateWindow(OSDAudioSettings)</onclick>
             </control>
             <control type="button" id="703" description="videosett">
-                <font>size36B</font>
+                <font>size36</font>
                 <include>osdtopbutton</include>
                 <label>13395</label>
                 <onclick>SetFocus(100,2)</onclick>
                 <onclick>ActivateWindow(OSDVideoSettings)</onclick>
             </control>
             <control type="button" id="705">
-                <font>size36B</font>
+                <font>size36</font>
                 <include>osdtopbutton</include>
                 <label>298</label>
                 <!--<onclick>SetFocus(100,2)</onclick>-->
                 <onclick>ActivateWindow(VideoBookmarks)</onclick>
             </control>
             <control type="button" id="707">
-                <font>size36B</font>
+                <font>size36</font>
                 <include>osdtopbutton</include>
                 <label>21445</label>
-                <onfocus>PlayerProcessInfo</onfocus>
+                <!--onfocus>PlayerProcessInfo</onfocus-->
                 <onclick>SetFocus(100,2)</onclick>
             </control>
             <control type="button" id="708">
-                <font>size36B</font>
+                <font>size36</font>
                 <visible>VideoPlayer.HasMenu</visible>
                 <include>osdtopbutton</include>
                 <label>25003</label>
@@ -569,7 +569,7 @@
                 <centerleft>960</centerleft>
                 <width>2020</width>
                 <height>300</height>
-                <colordiffuse>osdoverlay</colordiffuse>
+                <colordiffuse>$VAR[bannercolor2]</colordiffuse>
                 <texture border="8">images/White.png</texture>
             </control>
             <control type="image">
@@ -613,7 +613,7 @@
                 <centerleft>960</centerleft>
                 <width>2020</width>
                 <height>250</height>
-                <colordiffuse>osdoverlay</colordiffuse>
+                <colordiffuse>$VAR[bannercolor2]</colordiffuse>
                 <texture border="8">images/White.png</texture>
             </control>
             <control type="group" id="9000">
@@ -764,7 +764,7 @@
                 <centerleft>960</centerleft>
                 <width>2020</width>
                 <height>300</height>
-                <colordiffuse>osdoverlay</colordiffuse>
+                <colordiffuse>$VAR[bannercolor2]</colordiffuse>
                 <texture border="8">images/White.png</texture>
             </control>
             <control type="grouplist">

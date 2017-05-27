@@ -24,8 +24,8 @@
 			<width>802</width>
 			<height>442</height>
 			<aspectratio>stretch</aspectratio>
-			<include condition="IsEmpty(Skin.String(CustomBgDialog)) + !Skin.HasTheme(White)">DialogTexture</include>
-			<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | Skin.HasTheme(White)">DialogTextureBG</include>	
+			<include condition="IsEmpty(Skin.String(CustomBgDialog)) + IsEmpty(Skin.String(CustomBgHome)) + !Skin.HasTheme(White)">DialogTexture</include>
+			<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(White)">DialogTextureBG</include>	
 		</control>	
 		<control type="image" description="List back diffuse">
 			<centerleft>960</centerleft>

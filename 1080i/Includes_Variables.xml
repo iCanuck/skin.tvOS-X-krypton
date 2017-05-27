@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+	<variable name="ShelfFanart">
+		<value condition="Control.HasFocus(311)">$INFO[Container(311).ListItem.Property(fanart_image)]</value>
+		<value condition="Control.HasFocus(312)">$INFO[Container(312).ListItem.Property(fanart_image)]</value>
+		<value condition="Control.HasFocus(313)">$INFO[Container(313).ListItem.Property(fanart_image)]</value>
+		<value condition="Control.HasFocus(317)">$INFO[Container(317).ListItem.Property(fanart_image)]</value>
+		<value condition="Control.HasFocus(318)">$INFO[Container(318).ListItem.Property(fanart_image)]</value>		
+		<value condition="Control.HasFocus(320)">$INFO[Container(320).ListItem.Property(fanart_image)]</value>		
+		<value condition="Control.HasFocus(321)">$INFO[Container(321).ListItem.Property(fanart_image)]</value>
+    </variable>	
+
 	<variable name="ShelfMenu">
 		<value condition="Control.HasFocus(9010)">$INFO[Container(9010).ListItem.Property(list)]</value>
 		<value>$INFO[Container(9000).ListItem.Property(list)]</value>	
@@ -12,15 +22,16 @@
     </variable>	
 
 	<variable name="HomeColor">
-		<value condition="Skin.HasSetting(Red-HomeBG)">FF7A0000</value>
-		<value condition="Skin.HasSetting(Orange-HomeBG)">FF982B00</value>
-		<value condition="Skin.HasSetting(Yellow-HomeBG)">FFD7AC00</value>
-		<value condition="Skin.HasSetting(Green-HomeBG)">FF007C09</value>
-		<value condition="Skin.HasSetting(Blue-HomeBG)">FF06456E</value>
-		<value condition="Skin.HasSetting(Indigo-HomeBG)">FF000E60</value>
-		<value condition="Skin.HasSetting(Violet-HomeBG)">FF310096</value>
+		<value condition="Skin.HasSetting(Black-HomeBG)">ff303030</value>	
+		<value condition="Skin.HasSetting(Red-HomeBG)">ff7a0000</value>
+		<value condition="Skin.HasSetting(Orange-HomeBG)">ff982b00</value>
+		<value condition="Skin.HasSetting(Yellow-HomeBG)">ffd7aC00</value>
+		<value condition="Skin.HasSetting(Green-HomeBG)">ff007c09</value>
+		<value condition="Skin.HasSetting(Blue-HomeBG)">ff06456e</value>
+		<value condition="Skin.HasSetting(Indigo-HomeBG)">ff000e60</value>
+		<value condition="Skin.HasSetting(Violet-HomeBG)">ff310096</value>
 		<value condition="!IsEmpty(Skin.String(HomeBGcolor))">$INFO[Skin.String(HomeBGcolor)]</value>
-		<value>FF06456E</value>
+		<value>ff06456e</value>
     </variable>	
 	
 	<variable name="HomePattern">	
@@ -43,18 +54,19 @@
         <value condition="Skin.HasSetting(homediffuse2)">66000000</value>
         <value condition="Skin.HasSetting(homediffuse3)">88000000</value>
         <value condition="Skin.HasSetting(homediffuse4)">99000000</value>
-        <value condition="Skin.HasSetting(homediffuse5)">BB000000</value>
+        <value condition="Skin.HasSetting(homediffuse5)">bb000000</value>
 		<value>00464646</value>
     </variable>		
 
 	<variable name="OtherColor">
-		<value condition="Skin.HasSetting(Red-OtherBG)">FF7A0000</value>
-		<value condition="Skin.HasSetting(Orange-OtherBG)">FF982B00</value>
-		<value condition="Skin.HasSetting(Yellow-OtherBG)">FFD7AC00</value>
-		<value condition="Skin.HasSetting(Green-OtherBG)">FF007C09</value>
-		<value condition="Skin.HasSetting(Blue-OtherBG)">FF06456E</value>
-		<value condition="Skin.HasSetting(Indigo-OtherBG)">FF000E60</value>
-		<value condition="Skin.HasSetting(Violet-OtherBG)">FF310096</value>
+		<value condition="Skin.HasSetting(Black-OtherBG)">ff303030</value>	
+		<value condition="Skin.HasSetting(Red-OtherBG)">ff7a0000</value>
+		<value condition="Skin.HasSetting(Orange-OtherBG)">ff982b00</value>
+		<value condition="Skin.HasSetting(Yellow-OtherBG)">ffd7ac00</value>
+		<value condition="Skin.HasSetting(Green-OtherBG)">ff007c09</value>
+		<value condition="Skin.HasSetting(Blue-OtherBG)">ff06456e</value>
+		<value condition="Skin.HasSetting(Indigo-OtherBG)">ff000e60</value>
+		<value condition="Skin.HasSetting(Violet-OtherBG)">ff310096</value>
 		<value condition="!String.IsEmpty(OtherBGcolor)">Skin.String(OtherBGcolor)</value>
 		<value>$VAR[HomeColor]</value>
     </variable>		
@@ -79,19 +91,20 @@
         <value condition="Skin.HasSetting(otherdiffuse2)">66000000</value>
         <value condition="Skin.HasSetting(otherdiffuse3)">88000000</value>
         <value condition="Skin.HasSetting(otherdiffuse4)">99000000</value>
-        <value condition="Skin.HasSetting(otherdiffuse5)">BB000000</value>
+        <value condition="Skin.HasSetting(otherdiffuse5)">bb000000</value>
 		<value condition="![Skin.HasSetting(otherdiffuse1) | Skin.HasSetting(otherdiffuse2) | Skin.HasSetting(otherdiffuse3)| Skin.HasSetting(otherdiffuse4) | Skin.HasSetting(otherdiffuse5)]  + !IsEmpty(Skin.String(CustomBgHome)) + IsEmpty(Skin.String(CustomBgOther))">$VAR[diffusehome]</value>
 		<value>00464646</value>
     </variable>
 
 	<variable name="DialogColor">
-		<value condition="Skin.HasSetting(Red-DialogBG)">FF7A0000</value>
-		<value condition="Skin.HasSetting(Orange-DialogBG)">FF982B00</value>
-		<value condition="Skin.HasSetting(Yellow-DialogBG)">FFD7AC00</value>
-		<value condition="Skin.HasSetting(Green-DialogBG)">FF007C09</value>
-		<value condition="Skin.HasSetting(Blue-DialogBG)">FF06456E</value>
-		<value condition="Skin.HasSetting(Indigo-DialogBG)">FF000E60</value>
-		<value condition="Skin.HasSetting(Violet-DialogBG)">FF310096</value>
+		<value condition="Skin.HasSetting(Black-DialogBG)">ff303030</value>	
+		<value condition="Skin.HasSetting(Red-DialogBG)">ff7a0000</value>
+		<value condition="Skin.HasSetting(Orange-DialogBG)">ff982b00</value>
+		<value condition="Skin.HasSetting(Yellow-DialogBG)">ffd7ac00</value>
+		<value condition="Skin.HasSetting(Green-DialogBG)">ff007c09</value>
+		<value condition="Skin.HasSetting(Blue-DialogBG)">ff06456e</value>
+		<value condition="Skin.HasSetting(Indigo-DialogBG)">ff000e60</value>
+		<value condition="Skin.HasSetting(Violet-DialogBG)">ff310096</value>
 		<value condition="!String.IsEmpty(DialogBGcolor)">Skin.String(DialogBGcolor)</value>
 		<value>$VAR[OtherColor]</value>
     </variable>		
@@ -115,7 +128,7 @@
         <value condition="Skin.HasSetting(dialogdiffuse2)">66000000</value>
         <value condition="Skin.HasSetting(dialogdiffuse3)">88000000</value>
         <value condition="Skin.HasSetting(dialogdiffuse4)">99000000</value>
-        <value condition="Skin.HasSetting(dialogdiffuse5)">BB000000</value>
+        <value condition="Skin.HasSetting(dialogdiffuse5)">bb000000</value>
 		<value>00464646</value>
     </variable>		
 	
@@ -133,14 +146,27 @@
 	<variable name="bannercolor">
         <value condition="Skin.HasSetting(graybanner)">66555555</value><!-- Sio2 Default -->
         <value condition="Skin.HasSetting(redbanner)">666C0000</value>
-        <value condition="Skin.HasSetting(orangebanner)">66A50000</value>
-        <value condition="Skin.HasSetting(yellowbanner)">66B09113</value>
+        <value condition="Skin.HasSetting(orangebanner)">66a50000</value>
+        <value condition="Skin.HasSetting(yellowbanner)">66b09113</value>
         <value condition="Skin.HasSetting(greenbanner)">66007732</value>
         <value condition="Skin.HasSetting(bluebanner)">66005484</value>
         <value condition="Skin.HasSetting(indigobanner)">66150071</value>
-        <value condition="Skin.HasSetting(violetbanner)">664300A7</value>
+        <value condition="Skin.HasSetting(violetbanner)">664300a7</value>
 		<value condition="Skin.HasTheme(White)">66555555</value><!-- Sio2 Default -->
 		<value>77000000</value>
+    </variable>	
+
+	<variable name="bannercolor2"><!-- Video OSD + OSDinfo Menu -->
+        <value condition="Skin.HasSetting(graybanner)">bb555555</value><!-- Sio2 Default -->
+        <value condition="Skin.HasSetting(redbanner)">bb6C0000</value>
+        <value condition="Skin.HasSetting(orangebanner)">bbA50000</value>
+        <value condition="Skin.HasSetting(yellowbanner)">bbB09113</value>
+        <value condition="Skin.HasSetting(greenbanner)">bb007732</value>
+        <value condition="Skin.HasSetting(bluebanner)">bb005484</value>
+        <value condition="Skin.HasSetting(indigobanner)">bb150071</value>
+        <value condition="Skin.HasSetting(violetbanner)">bb4300A7</value>
+		<value condition="Skin.HasTheme(White)">bb555555</value><!-- Sio2 Default -->
+		<value>bb000000</value>
     </variable>		
 
 <!--	
@@ -332,6 +358,5 @@ LATEST
         <!--value condition="Container.Content(genres) + Window.IsActive(Music)">special://home/addons/sio2x.extrapack/music_extrapack/$INFO[ListItem.Label].jpg</value-->
         <value>$INFO[ListItem.Icon]</value>
     </variable>
-
 
 </includes>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="1701">
+	<!--onunload>Skin.Reset(passkey)</onunload-->
     <backgroundcolor>background</backgroundcolor>
     <defaultcontrol always="true">50</defaultcontrol>
     <!--onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;level=1)</onunload-->
@@ -7,7 +8,31 @@
     <include>OpenClose</include>
     <controls>
         <include>OtherBackground</include>
+        <!--control type="group" description="Passkey Warning">
+			<visible>!String.IsEqual(Skin.String(passkey),1234)</visible>
+            <left>1020</left>
+            <top>130</top>
+            <control type="grouplist" id="50">
+                <width>902</width>
+                <height>910</height>
+                <onleft>noop</onleft>
+                <onright>noop</onright>
+                <onup>50</onup>
+                <ondown>50</ondown>
+                <itemgap>14</itemgap>						
+                <control type="button" id="1" description="Wrong Passkey">
+                    <width>840</width>
+                    <align>left</align>
+					<textcolor>red</textcolor>
+					<focusedcolor>red</focusedcolor>
+                    <label>!!! You have entered an incorrect passkey !!!</label>
+                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
+                    <onclick>Back</onclick>
+                </control>		
+			</control>
+		</control-->
         <control type="group">
+			<!--visible>String.IsEqual(Skin.String(passkey),1234)</visible-->
             <left>1020</left>
             <top>130</top>
             <control type="grouplist" id="50">
@@ -18,200 +43,38 @@
                 <onup>50</onup>
                 <ondown>50</ondown>
                 <itemgap>14</itemgap>	
-				
-
-
-
-
-
-                <control type="button" id="77" description="Home BG Color">
+                <!--control type="button" id="98" description="TEST">
                     <width>840</width>
                     <align>left</align>
-                    <label>$LOCALIZE[31090]</label>
+                    <label>RESET PASSKEY</label>
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>ActivateWindow(1801)</onclick>
-                </control>	
-				
-				
-				
-                <control type="radiobutton" id="1" description="Custom Home Pattern">
-					<!--enable>IsEmpty(Skin.String(CustomBgHome))</enable-->			
+                    <onclick>Skin.Reset(passkey)</onclick>
+                </control-->
+                <control type="button" id="1" description="Lyrics">
                     <width>840</width>
                     <align>left</align>
-                    <label>$LOCALIZE[31079]</label>
+                    <label>31062</label>
+                    <label2>$INFO[Skin.String(LyricPath)]</label2>
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick condition="IsEmpty(Skin.String(CustomHomePattern)) + System.HasAddon(resource.images.tvOS-X) + !System.HasAddon(resource.images.tvOS-X-Big)">Skin.SetFile(CustomHomePattern,.jpg|.png|.gif,special://home/addons/resource.images.tvOS-X/resources/patterns)</onclick>
-                    <onclick condition="IsEmpty(Skin.String(CustomHomePattern)) + System.HasAddon(resource.images.tvOS-X-Big)">Skin.SetFile(CustomHomePattern,.jpg|.png|.gif,special://home/addons/resource.images.tvOS-X-Big/resources/patterns)</onclick>								
-					<onclick condition="!IsEmpty(Skin.String(CustomHomePattern))">Skin.Reset(CustomHomePattern)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(CustomBgHome))">Skin.Reset(CustomBgHome)</onclick>
-                    <selected>!IsEmpty(Skin.String(CustomHomePattern))</selected>
+                    <onclick>Skin.SetAddon(LyricPath,xbmc.python.lyrics)</onclick>
                 </control>
-
-
-
-
-		
-
-				
-                <control type="radiobutton" id="2" description="Custom Home Wallpaper">				
+                <control type="radiobutton" id="2">
                     <width>840</width>
                     <align>left</align>
-                    <label>$LOCALIZE[31069]</label>
+                    <label>$LOCALIZE[31044]</label>
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-					<onclick condition="IsEmpty(Skin.String(CustomBgHome)) + System.HasAddon(resource.images.tvOS-X) + !System.HasAddon(resource.images.tvOS-X-Big)">Skin.SetFile(CustomBgHome,.jpg|.png|.gif,special://home/addons/resource.images.tvOS-X/resources/backgrounds)</onclick>
-					<onclick condition="IsEmpty(Skin.String(CustomBgHome)) + System.HasAddon(resource.images.tvOS-X-Big)">Skin.SetFile(CustomBgHome,.jpg|.png|.gif,special://home/addons/resource.images.tvOS-X-Big/resources/backgrounds)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(CustomBgHome))">Skin.Reset(CustomBgHome)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(CustomHomePattern))">Skin.Reset(CustomHomePattern)</onclick>
-                    <selected>!IsEmpty(Skin.String(CustomBgHome))</selected>
-                </control>							
-
-				
-				
-				
-                <control type="button" id="3" description="Home BG Darkness">
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31082]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>ActivateWindow(1702)</onclick>
-                </control>					
-				
-				
-                <control type="button" id="78" description="Other BG Color">
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31091]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>ActivateWindow(1802)</onclick>
+                    <onclick>Skin.ToggleSetting(ViewsMenuOff)</onclick>
+                    <selected>!Skin.HasSetting(ViewsMenuOff)</selected>
                 </control>
-				
-                <control type="radiobutton" id="4" description="Custom Other Pattern">
-					<!--enable>IsEmpty(Skin.String(CustomBgOther))</enable-->			
+                <control type="radiobutton" id="3">
                     <width>840</width>
                     <align>left</align>
-                    <label>$LOCALIZE[31080]</label>
+                    <label>$LOCALIZE[31042]</label>
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick condition="IsEmpty(Skin.String(CustomOtherPattern))">Skin.SetFile(CustomOtherPattern,.jpg|.png|.gif,special://skin/patterns)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(CustomOtherPattern))">Skin.Reset(CustomOtherPattern)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(CustomBgOther))">Skin.Reset(CustomBgOther)</onclick>
-                    <selected>!IsEmpty(Skin.String(CustomOtherPattern))</selected>
+                    <onclick>Skin.ToggleSetting(hidejump)</onclick>
+                    <selected>Skin.HasSetting(hidejump)</selected>
                 </control>
-				
-				
-				
-				
-                <control type="radiobutton" id="5" description="Custom Other Wallpaper">			
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31070]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-					<onclick condition="IsEmpty(Skin.String(CustomBgOther)) + System.HasAddon(resource.images.tvOS-X) + !System.HasAddon(resource.images.tvOS-X-Big)">Skin.SetFile(CustomBgOther,.jpg|.png|.gif,special://home/addons/resource.images.tvOS-X/resources/backgrounds)</onclick>
-					<onclick condition="IsEmpty(Skin.String(CustomBgOther)) + System.HasAddon(resource.images.tvOS-X-Big)">Skin.SetFile(CustomBgOther,.jpg|.png|.gif,special://home/addons/resource.images.tvOS-X-Big/resources/backgrounds)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(CustomBgOther))">Skin.Reset(CustomBgOther)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(CustomOtherPattern))">Skin.Reset(CustomOtherPattern)</onclick>					
-                    <selected>!IsEmpty(Skin.String(CustomBgOther))</selected>
-                </control>								
-				
-				
-				
-                <control type="button" id="6" description="Other BG Darkness">
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31083]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>ActivateWindow(1703)</onclick>
-                </control>	
-
-
-				
-				
-                <control type="button" id="79" description="Dialog BG Color">
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31092]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>ActivateWindow(1803)</onclick>
-                </control>
-
-                <control type="radiobutton" id="70" description="Custom Dialog Pattern">
-					<enable>IsEmpty(Skin.String(CustomBgDialog))</enable>			
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31087]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick condition="IsEmpty(Skin.String(CustomDialogPattern))">Skin.SetFile(CustomDialogPattern,.jpg|.png|.gif,special://skin/patterns)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(CustomDialogPattern))">Skin.Reset(CustomDialogPattern)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(CustomBgDialog))">Skin.Reset(CustomBgDialog)</onclick>	
-                    <selected>!IsEmpty(Skin.String(CustomDialogPattern))</selected>
-                </control>				
-				
-				
-				
-
-                <control type="radiobutton" id="7" description="Custom Dialog Wallpaper">			
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31085]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-					<onclick condition="IsEmpty(Skin.String(CustomBgDialog)) + System.HasAddon(resource.images.tvOS-X) + !System.HasAddon(resource.images.tvOS-X-Big)">Skin.SetFile(CustomBgDialog,.jpg|.png|.gif,special://home/addons/resource.images.tvOS-X/resources/backgrounds)</onclick>
-					<onclick condition="IsEmpty(Skin.String(CustomBgDialog)) + System.HasAddon(resource.images.tvOS-X-Big)">Skin.SetFile(CustomBgDialog,.jpg|.png|.gif,special://home/addons/resource.images.tvOS-X-Big/resources/backgrounds)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(CustomBgDialog))">Skin.Reset(CustomBgDialog)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(CustomDialogPattern))">Skin.Reset(CustomDialogPattern)</onclick>					
-                    <selected>!IsEmpty(Skin.String(CustomBgDialog))</selected>
-                </control>
-
-
-                <control type="button" id="8" description="Dialog BG Darkness">
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31086]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>ActivateWindow(1704)</onclick>
-                </control>	
-
-
-
-				
-
-
-                <control type="radiobutton" id="9" description="Home Icon Zoom Animation">				
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31071]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>Skin.ToggleSetting(HomeZoom)</onclick>
-                    <selected>Skin.HasSetting(HomeZoom)</selected>
-                </control>	
-
-				
-				
-                <control type="button" id="10" description="Custom Banner Color">
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31084]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>ActivateWindow(1704)</onclick>
-                </control>					
-				
-                <control type="radiobutton" id="11" description="Home Banner">				
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31072]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>Skin.ToggleSetting(HomeBanner)</onclick>
-                    <selected>!Skin.HasSetting(HomeBanner)</selected>
-                </control>	
-				
-                <control type="radiobutton" id="12" description="Home Banner Animation">				
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31073]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>Skin.ToggleSetting(HomeBannerAnimation)</onclick>
-                    <selected>Skin.HasSetting(HomeBannerAnimation)</selected>
-                </control>
-
-                <control type="radiobutton" id="13" description="ScrollLetter">				
+                <control type="radiobutton" id="4" description="ScrollLetter">				
                     <width>840</width>
                     <align>left</align>
                     <label>$LOCALIZE[31074]</label>
@@ -219,20 +82,7 @@
                     <onclick>Skin.ToggleSetting(ScrollLetter)</onclick>
                     <selected>Skin.HasSetting(ScrollLetter)</selected>
                 </control>
-				
-				
-                <control type="radiobutton" id="14" description="Fanart">				
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31075]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>Skin.ToggleSetting(FanArt)</onclick>
-                    <selected>!Skin.HasSetting(FanArt)</selected>
-                </control>
-				
-				
-				
-                <control type="radiobutton" id="15" description="StartupSplash">				
+                <control type="radiobutton" id="5" description="StartupSplash">				
                     <width>840</width>
                     <align>left</align>
                     <label>$LOCALIZE[31076]</label>
@@ -251,7 +101,7 @@
         </control>
         <control type="label">
             <include>Heading</include>
-            <label>$LOCALIZE[20077]</label>
+            <label>$LOCALIZE[31098] $LOCALIZE[31097]</label>
         </control>
     </controls>
 </window>

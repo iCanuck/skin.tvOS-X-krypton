@@ -35,7 +35,7 @@
 		<property property="viewtype">Posters</property>	
 		<property property="viewtype">Squares</property>
 		<property property="viewtype">Episodes</property>
-
+		<property property="viewtype">List</property>
     <!--onclick id="211">SetFocus(313)</onclick-->
 
     <widget name="movies" label="In progress Movies" path="$VAR[movieshelf]" target="video">shelfmovies</widget>

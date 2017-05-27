@@ -1,13 +1,32 @@
-- test/fix textview background (not tested)
-- finish dialogok dialog bg
-- finish dialogcontextmenu - bg darkness
-
+todo<<<< 
+- add wallpaper preview to background settings left panel
+- test/fix textview background (not tested)?????
 
 v3.0.2
+(05/26/2017)
+- fixed other/dialog pattern folder
+- fixed dialog background
+- added black background color
+- localized all labels
+- reorganized skinsettings
+
+(05/25/2017)
+- added shelf fanart background
+- fixed movie icon shelf + shelf menu overlap
+- fixed general shelf label animation
+- fixed shelf menu label animation
+- changed videoosd + osdinfo menu background color (same as banner color)
+- fixed osdinfo menu codec info
+
+(05/24/2017)
+- added passkey to adv. skinsettings  (disabled until later)
+- fixed poster shelf animation on column4
+- added list shelf view
+- modified icon view
+
 (05/23/2017)
 - added shelf menu
 - added shelf viewtypes
-
 
 (05/22/2017)
 - moved patterns to resource.images.tvOS-X
@@ -16,8 +35,6 @@ v3.0.2
 - fixed video/music/program views
 - added focused border to icon views/addonbrowser
 - fixed texture filename case
-
-
 
 v3.0.1
 (05/21/2017)

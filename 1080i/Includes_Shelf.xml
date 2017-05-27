@@ -6,14 +6,12 @@
     </include>
     <include name="PosterShortcutsCommons">
         <include>ShelfFade</include>
-        <animation effect="slide" end="-100,0" time="250" condition="Container(311).Column(4)">Conditional</animation>
+        <animation effect="slide" end="-100,0" time="250" condition="Container(311).Column(4) | Container(320).Column(4) | Container(321).Column(4)">Conditional</animation>
         <top>90</top>
         <width>2030</width>
         <height>630</height>
-		
-        <onup condition="!String.IsEmpty(Container(9010).ListItem.Property(list))">9009</onup>		
+        <onup condition="!String.IsEmpty(Container(9010).ListItem.Property(list))">noop</onup>		
         <onup condition="String.IsEmpty(Container(9010).ListItem.Property(list))">9010</onup>
-		
         <ondown>9000</ondown>
         <onleft>noop</onleft>
         <onright>noop</onright>
@@ -85,94 +83,13 @@
             </control>
         </focusedlayout>
     </include>
-
-<!--	
-    <include name="PosterShortcutsCommonsCUSTOM">
-        <include>ShelfFade</include>
-        <animation effect="slide" end="-100,0" time="250" condition="Container(311).Column(4)">Conditional</animation>
-        <top>90</top>
-        <width>2030</width>
-        <height>630</height>
-        <onup>9010</onup>
-        <ondown>9000</ondown>
-        <onleft>noop</onleft>
-        <onright>noop</onright>
-        <orientation>horizontal</orientation>
-        <scrolltime>400</scrolltime>
-        <onclick condition="$EXP[isupcomingmovies]">Contextmenu</onclick>
-        <itemlayout height="600" width="382">
-            <control type="image">
-                <left>90</left>
-                <top>35</top>
-                <width>335</width>
-                <height>500</height>
-                <texture background="true" fallback="DefaultVideoCover.png">$VAR[locandine]</texture>
-                <aspectratio>scale</aspectratio>
-            </control>
-            <control type="image" description="WatchStatus">
-                <left>373</left>
-                <bottom>65</bottom>
-                <height>52</height>
-                <width>52</width>
-                <aspectratio>keep</aspectratio>
-                <texture>$VAR[WatchStatus]</texture>
-            </control>
-        </itemlayout>
-        <focusedlayout height="600" width="392">
-            <control type="group">
-                <animation effect="zoom" start="100" end="112" time="120" center="257,300" tween="Back" easing="Out">Focus</animation>
-                <animation effect="zoom" start="112" end="100" time="120" center="257,300">unFocus</animation>
-                <control type="image">
-                    <animation effect="fade" start="0" end="100" time="150">Focus</animation>
-                    <animation effect="fade" start="100" end="0" time="150">unFocus</animation>
-                    <left>40</left>
-                    <top>41</top>
-                    <width>455</width>
-                    <height>580</height>
-                    <texture>shadow.png</texture>
-                </control>
-                <control type="image">
-                    <left>90</left>
-                    <top>35</top>
-                    <width>335</width>
-                    <height>500</height>
-                    <texture background="true" fallback="DefaultVideoCover.png">$VAR[locandine]</texture>
-                    <aspectratio>scale</aspectratio>
-                </control>
-                <control type="image" description="WatchStatus">
-                    <left>373</left>
-                    <bottom>65</bottom>
-                    <height>52</height>
-                    <width>52</width>
-                    <aspectratio>keep</aspectratio>
-                    <texture>$VAR[WatchStatus]</texture>
-                </control>
-            </control>
-            <control type="group" description="labels">
-                <animation effect="fade" start="0" end="100" time="200" delay="100">Focus</animation>
-                <animation effect="fade" start="100" end="0" time="200">unFocus</animation>
-                <control type="label">
-                    <visible>ControlGroup(700).HasFocus()</visible>
-                    <centerleft>257</centerleft>
-                    <top>570</top>
-                    <width>700</width>
-                    <height>40</height>
-                    <font>size30B</font>
-                    <!--<autoscroll>false</autoscroll>
-                    <label>$INFO[ListItem.Title]</label>
-                    <align>center</align>
-                </control>
-            </control>
-        </focusedlayout>
-    </include>	
--->
-	
     <include name="EpisodeShortcutsCommons">
         <include>ShelfFade</include>
         <top>110</top>
         <width>1920</width>
         <height>610</height>
-        <onup>9009</onup>
+        <onup condition="!String.IsEmpty(Container(9010).ListItem.Property(list))">noop</onup>		
+        <onup condition="String.IsEmpty(Container(9010).ListItem.Property(list))">9010</onup>
         <ondown>9000</ondown>
         <onleft>noop</onleft>
         <onright>noop</onright>
@@ -343,7 +260,8 @@
         <top>90</top>
         <width>1920</width>
         <height>630</height>
-        <onup>9009</onup>
+        <onup condition="!String.IsEmpty(Container(9010).ListItem.Property(list))">noop</onup>		
+        <onup condition="String.IsEmpty(Container(9010).ListItem.Property(list))">9010</onup>
         <ondown>9000</ondown>
         <onleft>noop</onleft>
         <onright>noop</onright>
@@ -395,6 +313,70 @@
             </control>
         </focusedlayout>
     </include>
+    <include name="ListShortcutsCommons">
+        <include>ShelfFade</include>
+        <top>70</top>
+		<left>960</left>
+        <width>960</width>
+        <height>630</height>
+        <onleft condition="!String.IsEmpty(Container(9010).ListItem.Property(list))">9010</onleft>		
+        <onleft condition="String.IsEmpty(Container(9010).ListItem.Property(list))">9000</onleft>
+        <!--ondown>noop</ondown-->
+        <onright>9000</onright>
+        <scrolltime>200</scrolltime>
+        <onclick condition="$EXP[isupcomingmovies]">Contextmenu</onclick>
+		<itemlayout width="1920" height="106">
+			<control type="label" description="Main Label">
+				<!--animation condition="ListItem.IsFolder" effect="slide" end="0,20" time="0" reversible="true">Conditional</animation-->
+				<left>65</left>
+				<width>802</width>
+				<height>106</height>				
+				<height>40</height>
+				<width>720</width>
+				<textcolor>darktext</textcolor>
+				<aligny>center</aligny>
+				<font>size36</font>
+				<scroll>false</scroll>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<!--control type="image">
+				<left>15</left>
+				<width>40</width>
+				<height>106</height>
+				<texture>$VAR[WatchStatus,overlay/]</texture>
+				<aspectratio>keep</aspectratio>
+				<colordiffuse>darktext</colordiffuse>
+			</control-->
+		</itemlayout>
+		<focusedlayout width="1920" height="106">
+			<control type="image">
+				<animation effect="fade" end="70" condition="Control.HasFocus(5000)" reversible="false">Conditional</animation>
+				<width>805</width>
+				<height>106</height>
+				<texture border="8">images/White.png</texture>
+			</control>
+			<control type="label" description="Main Label">
+				<animation condition="ListItem.IsFolder" effect="slide" end="0,20" time="0" reversible="true">Conditional</animation>
+				<left>65</left>
+				<width>802</width>
+				<height>106</height>
+				<height>40</height>
+				<width>720</width>
+				<aligny>center</aligny>
+				<textcolor>black</textcolor>
+				<font>size36</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<!--control type="image">
+				<left>15</left>
+				<width>40</width>
+				<height>106</height>
+				<texture>$VAR[WatchStatus,overlay/]</texture>
+				<aspectratio>keep</aspectratio>
+				<colordiffuse>black</colordiffuse>
+			</control-->
+		</focusedlayout>			
+    </include>
     <include name="Movies">
         <control type="panel" id="311" description="Movies Shelf Shortcuts">
             <visible>String.IsEqual(Container(9000).ListItem.Property(defaultID),movies)</visible>
@@ -440,97 +422,143 @@
         </control>
     </include>
     <include name="General" description="General Shelf Shortcuts">
-        <control type="panel" id="320" description="Default Shortcuts">
-            <visible>$EXP[320visibility]</visible>	
-			<visible>![String.IsEqual(Container(9000).ListItem.Property(viewtype),Posters)|String.IsEqual(Container(9000).ListItem.Property(viewtype),Squares)|String.IsEqual(Container(9000).ListItem.Property(viewtype),Episodes)]</visible>			<!--visible>![String.IsEqual(Container(9000).ListItem.Property(viewtype),Posters)+String.IsEqual(Container(9000).ListItem.Property(viewtype),Squares)+String.IsEqual(Container(9000).ListItem.Property(viewtype),Episodes)] | String.IsEqual(Container(9000).ListItem.Property(viewtype),none)</visible-->			
-            <onup>9010</onup>
-            <ondown>9000</ondown>
-            <onleft>320</onleft>
-            <onright>320</onright>
-			<include>PosterShortcutsCommons</include>			
-			<content>$INFO[Container(9000).ListItem.Property(list)]</content>	
-        </control>	
-        <control type="panel" id="320" description="Poster Shortcuts">
-            <visible>$EXP[320visibility]</visible>	
-			<visible>String.IsEqual(Container(9000).ListItem.Property(viewtype),Posters)</visible>			
-            <onup>9010</onup>
-            <ondown>9000</ondown>
-            <onleft>320</onleft>
-            <onright>320</onright>
-			<include>PosterShortcutsCommons</include>			
-			<content>$INFO[Container(9000).ListItem.Property(list)]</content>	
-        </control>
-        <control type="panel" id="320" description="Squares Shortcuts">
-            <visible>$EXP[320visibility]</visible>		
-			<visible>String.IsEqual(Container(9000).ListItem.Property(viewtype),Squares)</visible>
-            <onup>9010</onup>
-            <ondown>9000</ondown>
-            <onleft>320</onleft>
-            <onright>320</onright>			
-			<include>SquareShortcutsCommons</include>
-			<content>$INFO[Container(9000).ListItem.Property(list)]</content>	
-        </control>
-        <control type="panel" id="320" description="Episodes Shortcuts">
-            <visible>$EXP[320visibility]</visible>		
-			<visible>String.IsEqual(Container(9000).ListItem.Property(viewtype),Episodes)</visible>
-            <onup>9010</onup>
-            <ondown>9000</ondown>
-            <onleft>320</onleft>
-            <onright>320</onright>			
-			<include>EpisodeShortcutsCommons</include>
-			<content>$INFO[Container(9000).ListItem.Property(list)]</content>	
-        </control>		
-    </include>	
+		<control type="group">	
+			<visible>!Control.IsVisible(321)</visible>
+			<control type="panel" id="320" description="Default Shortcuts">
+				<visible>$EXP[320visibility]</visible>	
+				<visible>![String.IsEqual(Container(9000).ListItem.Property(viewtype),Posters)|String.IsEqual(Container(9000).ListItem.Property(viewtype),Squares)|String.IsEqual(Container(9000).ListItem.Property(viewtype),Episodes)|String.IsEqual(Container(9000).ListItem.Property(viewtype),List)]</visible>			<!--visible>![String.IsEqual(Container(9000).ListItem.Property(viewtype),Posters)+String.IsEqual(Container(9000).ListItem.Property(viewtype),Squares)+String.IsEqual(Container(9000).ListItem.Property(viewtype),Episodes)] | String.IsEqual(Container(9000).ListItem.Property(viewtype),none)</visible-->			
+				<onup>9010</onup>
+				<ondown>9000</ondown>
+				<onleft>320</onleft>
+				<onright>320</onright>
+				<include>PosterShortcutsCommons</include>			
+				<content>$INFO[Container(9000).ListItem.Property(list)]</content>	
+			</control>	
+			<control type="panel" id="320" description="Poster Shortcuts">
+				<visible>$EXP[320visibility]</visible>	
+				<visible>String.IsEqual(Container(9000).ListItem.Property(viewtype),Posters)</visible>			
+				<onup>9010</onup>
+				<ondown>9000</ondown>
+				<onleft>320</onleft>
+				<onright>320</onright>
+				<include>PosterShortcutsCommons</include>			
+				<content>$INFO[Container(9000).ListItem.Property(list)]</content>	
+			</control>
+			<control type="panel" id="320" description="Squares Shortcuts">
+				<visible>$EXP[320visibility]</visible>		
+				<visible>String.IsEqual(Container(9000).ListItem.Property(viewtype),Squares)</visible>
+				<onup>9010</onup>
+				<ondown>9000</ondown>
+				<onleft>320</onleft>
+				<onright>320</onright>			
+				<include>SquareShortcutsCommons</include>
+				<content>$INFO[Container(9000).ListItem.Property(list)]</content>	
+			</control>
+			<control type="panel" id="320" description="Episodes Shortcuts">
+				<visible>$EXP[320visibility]</visible>		
+				<visible>String.IsEqual(Container(9000).ListItem.Property(viewtype),Episodes)</visible>
+				<onup>9010</onup>
+				<ondown>9000</ondown>
+				<onleft>320</onleft>
+				<onright>320</onright>			
+				<include>EpisodeShortcutsCommons</include>
+				<content>$INFO[Container(9000).ListItem.Property(list)]</content>	
+			</control>
+			<control type="panel" id="320" description="List Shortcuts">
+				<visible>$EXP[320visibility]</visible>		
+				<visible>String.IsEqual(Container(9000).ListItem.Property(viewtype),List)</visible>
+				<!--onup>9010</onup>
+				<ondown>9000</ondown>
+				<onleft>320</onleft>
+				<onright>320</onright-->			
+				<include>ListShortcutsCommons</include>
+				<content>$INFO[Container(9000).ListItem.Property(list)]</content>	
+			</control>	
+			<control type="group" description="List Poster">
+				<!--visible>$EXP[320visibility]</visible-->		
+				<visible>String.IsEqual(Container(9000).ListItem.Property(viewtype),List)</visible>		
+				<animation effect="fade" delay="100" time="300">Visible</animation>
+				<animation effect="fade" time="0">Hidden</animation>
+				<control type="image" description="Poster">
+					<centerleft>640</centerleft>
+					<centertop>374</centertop>
+					<width>335</width>
+					<height>500</height>
+					<include>Icon_Fade</include>
+					<texture background="true">$INFO[Container(320).ListItem.Icon]</texture><!-- todo - set as variable?? -->
+					<aspectratio aligny="center">keep</aspectratio>
+				</control>		
+			</control>
+		</control>
+    </include>
     <include name="ShelfMenu">
-        <control type="panel" id="321" description="Default Shortcuts">
-            <visible>$EXP[321visibility]</visible>	
-			<visible>![String.IsEqual(Container(9010).ListItem.Property(viewtype),Posters)|String.IsEqual(Container(9010).ListItem.Property(viewtype),Squares)|String.IsEqual(Container(9010).ListItem.Property(viewtype),Episodes)]</visible>			<!--visible>![String.IsEqual(Container(9010).ListItem.Property(viewtype),Posters)+String.IsEqual(Container(9010).ListItem.Property(viewtype),Squares)+String.IsEqual(Container(9010).ListItem.Property(viewtype),Episodes)] | String.IsEqual(Container(9010).ListItem.Property(viewtype),none)</visible-->			
-            <onup>9010</onup>
-            <ondown>9000</ondown>
-            <onleft>321</onleft>
-            <onright>321</onright>
-			<include>PosterShortcutsCommons</include>			
-			<content>$INFO[Container(9010).ListItem.Property(list)]</content>	
-        </control>	
-        <control type="panel" id="321" description="Poster Shortcuts">
-            <visible>$EXP[321visibility]</visible>	
-			<visible>String.IsEqual(Container(9010).ListItem.Property(viewtype),Posters)</visible>			
-            <onup>9010</onup>
-            <ondown>9000</ondown>
-            <onleft>321</onleft>
-            <onright>321</onright>
-			<include>PosterShortcutsCommons</include>			
-			<content>$INFO[Container(9010).ListItem.Property(list)]</content>	
-        </control>
-        <control type="panel" id="321" description="Squares Shortcuts">
-            <visible>$EXP[321visibility]</visible>		
-			<visible>String.IsEqual(Container(9010).ListItem.Property(viewtype),Squares)</visible>
-            <onup>9010</onup>
-            <ondown>9000</ondown>
-            <onleft>321</onleft>
-            <onright>321</onright>			
-			<include>SquareShortcutsCommons</include>
-			<content>$INFO[Container(9010).ListItem.Property(list)]</content>	
-        </control>
-        <control type="panel" id="321" description="Episodes Shortcuts">
-            <visible>$EXP[321visibility]</visible>		
-			<visible>String.IsEqual(Container(9010).ListItem.Property(viewtype),Episodes)</visible>
-            <onup>9010</onup>
-            <ondown>9000</ondown>
-            <onleft>321</onleft>
-            <onright>321</onright>			
-			<include>EpisodeShortcutsCommons</include>
-			<content>$INFO[Container(9010).ListItem.Property(list)]</content>	
-        </control>	
-        <!--control type="panel" id="321" description="TOP Shortcuts">
-	        <visible>$EXP[321visibility]</visible>						
-            <onup>9010</onup>
-            <ondown>9000</ondown>
-            <onleft>321</onleft>
-            <onright>321</onright>
-            <include>PosterShortcutsCommons</include>
-			<content>$INFO[Container(9010).ListItem.Property(list)]</content>	
-        </control-->
+		<control type="group">	
+			<visible>![Control.IsVisible(311) | Control.IsVisible(320)]</visible>	
+			<control type="panel" id="321" description="Default Shortcuts">
+				<visible>$EXP[321visibility]</visible>	
+				<visible>![String.IsEqual(Container(9010).ListItem.Property(viewtype),Posters)|String.IsEqual(Container(9010).ListItem.Property(viewtype),Squares)|String.IsEqual(Container(9010).ListItem.Property(viewtype),Episodes)|String.IsEqual(Container(9010).ListItem.Property(viewtype),List)]</visible>			<!--visible>![String.IsEqual(Container(9010).ListItem.Property(viewtype),Posters)+String.IsEqual(Container(9010).ListItem.Property(viewtype),Squares)+String.IsEqual(Container(9010).ListItem.Property(viewtype),Episodes)] | String.IsEqual(Container(9010).ListItem.Property(viewtype),none)</visible-->			
+				<onup>9010</onup>
+				<ondown>9000</ondown>
+				<onleft>321</onleft>
+				<onright>321</onright>
+				<include>PosterShortcutsCommons</include>			
+				<content>$INFO[Container(9010).ListItem.Property(list)]</content>	
+			</control>	
+			<control type="panel" id="321" description="Poster Shortcuts">
+				<visible>$EXP[321visibility]</visible>	
+				<visible>String.IsEqual(Container(9010).ListItem.Property(viewtype),Posters)</visible>			
+				<onup>9010</onup>
+				<ondown>9000</ondown>
+				<onleft>321</onleft>
+				<onright>321</onright>
+				<include>PosterShortcutsCommons</include>			
+				<content>$INFO[Container(9010).ListItem.Property(list)]</content>	
+			</control>
+			<control type="panel" id="321" description="Squares Shortcuts">
+				<visible>$EXP[321visibility]</visible>		
+				<visible>String.IsEqual(Container(9010).ListItem.Property(viewtype),Squares)</visible>
+				<onup>9010</onup>
+				<ondown>9000</ondown>
+				<onleft>321</onleft>
+				<onright>321</onright>			
+				<include>SquareShortcutsCommons</include>
+				<content>$INFO[Container(9010).ListItem.Property(list)]</content>	
+			</control>
+			<control type="panel" id="321" description="Episodes Shortcuts">
+				<visible>$EXP[321visibility]</visible>		
+				<visible>String.IsEqual(Container(9010).ListItem.Property(viewtype),Episodes)</visible>
+				<onup>9010</onup>
+				<ondown>9000</ondown>
+				<onleft>321</onleft>
+				<onright>321</onright>			
+				<include>EpisodeShortcutsCommons</include>
+				<content>$INFO[Container(9010).ListItem.Property(list)]</content>	
+			</control>
+			<control type="group" description="List Poster">
+				<!--visible>$EXP[321visibility]</visible-->		
+				<visible>String.IsEqual(Container(9010).ListItem.Property(viewtype),List)</visible>		
+				<animation effect="fade" delay="100" time="300">Visible</animation>
+				<animation effect="fade" time="0">Hidden</animation>
+				<control type="image" description="Poster">
+					<centerleft>640</centerleft>
+					<centertop>374</centertop>
+					<width>335</width>
+					<height>500</height>
+					<include>Icon_Fade</include>
+					<texture background="true">$INFO[Container(321).ListItem.Icon]</texture><!-- todo - set as variable?? -->
+					<aspectratio aligny="center">keep</aspectratio>
+				</control>		
+			</control>		
+			<!--control type="panel" id="321" description="TOP Shortcuts">
+				<visible>$EXP[321visibility]</visible>						
+				<onup>9010</onup>
+				<ondown>9000</ondown>
+				<onleft>321</onleft>
+				<onright>321</onright>
+				<include>PosterShortcutsCommons</include>
+				<content>$INFO[Container(9010).ListItem.Property(list)]</content>	
+			</control-->
+		</control>
     </include>	
     <!--todo appstore shelf-->
     <include name="appstore_shelf">

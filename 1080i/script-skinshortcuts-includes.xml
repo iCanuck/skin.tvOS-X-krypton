@@ -79,7 +79,7 @@
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<label>$INFO[Weather.Temperature]</label>
-			<label2>$INFO[Window(weather).Property(Current.FanartCode),weather/,.png]</label2>
+			<label2>weather/31.png</label2>
 			<icon>$INFO[Window(weather).Property(Current.FanartCode),weathershelf/,.png]</icon>
 			<thumb>-</thumb>
 			<property name="labelID">info-weather-temperature</property>

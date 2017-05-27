@@ -30,7 +30,7 @@
                             <width>1850</width>
                             <height>150</height>
                             <aspectratio>stretch</aspectratio>
-                            <texture border="8" colordiffuse="osdoverlay">images/White.png</texture>
+                            <texture border="8" colordiffuse="$VAR[bannercolor2]">images/White.png</texture>
                         </control>
                     </control>
                     <control type="label" description="Title">

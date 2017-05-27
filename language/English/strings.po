@@ -175,8 +175,8 @@ msgid "Custom Shelf Shortcuts"
 msgstr "Custom Shelf Shortcuts"
 
 msgctxt "#31052"
-msgid "Home Page Customizer"
-msgstr "Home Page Customizer"
+msgid "Home Customizer"
+msgstr "Home Customizer"
 
 msgctxt "#31053"
 msgid "Link For Music Icon"
@@ -329,6 +329,27 @@ msgstr "Dialog Background Color"
 msgctxt "#31093"
 msgid "Add shelf menu item"
 msgstr "Add shelf menu item"
+
+msgctxt "#31094"
+msgid "Shelf Fanart Background"
+msgstr "Shelf Fanart Background"
+
+msgctxt "#31095"
+msgid "Background Settings"
+msgstr "Background Settings"
+
+msgctxt "#31096"
+msgid "Home Settings"
+msgstr "Home Settings"
+
+msgctxt "#31097"
+msgid "Skin Settings"
+msgstr "Skin Settings"
+
+msgctxt "#31098"
+msgid "Advanced"
+msgstr "Advanced"
+
 
 
 msgctxt "#31422"

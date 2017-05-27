@@ -115,6 +115,7 @@
 			<include condition="!Skin.HasSetting(HomeZoom)">HomeSliderCustom</include>			
         </control>
         <control type="grouplist" id="300" description="Top Options">
+			<visible>Container(211).Row(0)</visible>
 			<!--visible allowhiddenfocus="true">Control.HasFocus(300)</visible-->
 			<centerleft>960</centerleft>
             <top>40</top>
