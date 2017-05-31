@@ -14,10 +14,11 @@
         <control type="image">
             <left>-80</left>
             <top>-80</top>
-            <width>725</width>
-            <height>1100</height>
-            <texture border="8">images/White.png</texture>
-            <colordiffuse>dialog</colordiffuse>
+            <width>800</width>
+            <height>1180</height>
+			<aspectratio>stretch</aspectratio>
+			<include condition="IsEmpty(Skin.String(CustomBgDialog)) + IsEmpty(Skin.String(CustomBgHome)) + ![Skin.HasTheme(Dark)|Skin.HasTheme(White)]">DialogTexture</include>
+			<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(Dark) | Skin.HasTheme(White)">DialogTextureBG</include>
         </control>
         <control type="label" id="1">
             <description>dialog Heading</description>
@@ -227,7 +228,7 @@
             <onright>11</onright>
             <onup>21</onup>
             <ondown>21</ondown>
-            <texturenofocus border="8">images/Black.png</texturenofocus>
+            <!--texturenofocus border="8">images/Black.png</texturenofocus-->
         </control>
         <control type="button" id="21">
             <description>Done button</description>
@@ -242,7 +243,7 @@
             <onright>17</onright>
             <onup>23</onup>
             <ondown>23</ondown>
-            <texturenofocus border="8">images/Black.png</texturenofocus>
+            <!--texturenofocus border="8">images/Black.png</texturenofocus-->
         </control>
     </controls>
 </window>

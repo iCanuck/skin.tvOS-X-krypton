@@ -1,8 +1,15 @@
-todo<<<< 
-- add wallpaper preview to background settings left panel
-- test/fix textview background (not tested)?????
-
 v3.0.2
+(05/30/2017)
+- fixed pvrguide + tvchannels (needs more fixes...)
+- fixed darkness/color menu header color
+
+(05/28/2017)
+- added fanart darkness setting
+- added shelf fanart darkness
+- fixed dialognumeric
+- added loading text at busy screen setting
+- fixed white theme / added dark theme
+- added view unfocused label in icon views setting (dark/white theme disabled by default)
 (05/26/2017)
 - fixed other/dialog pattern folder
 - fixed dialog background

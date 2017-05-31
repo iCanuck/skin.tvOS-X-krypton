@@ -79,7 +79,7 @@
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<label>$INFO[Weather.Temperature]</label>
-			<label2>weather/31.png</label2>
+			<label2>$INFO[Window(weather).Property(Current.FanartCode),weather/,.png]</label2>
 			<icon>$INFO[Window(weather).Property(Current.FanartCode),weathershelf/,.png]</icon>
 			<thumb>-</thumb>
 			<property name="labelID">info-weather-temperature</property>
@@ -649,6 +649,8 @@
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
+	<include />
+	<include name="skinshortcuts-submenu-1" />
 	<include name="skinshortcuts-group-movies">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -855,10 +857,22 @@
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
+	<include name="skinshortcuts-group-movies-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-movies-1">
+		<description>No items</description>
+	</include>
 	<include name="skinshortcuts-group-tvshows">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-alt-tvshows">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-tvshows-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-tvshows-1">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-num-2">
@@ -961,16 +975,34 @@
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
+	<include name="skinshortcuts-group-num-2-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-2-1">
+		<description>No items</description>
+	</include>
 	<include name="skinshortcuts-group-num-24001">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-alt-num-24001">
 		<description>No items</description>
 	</include>
+	<include name="skinshortcuts-group-num-24001-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-24001-1">
+		<description>No items</description>
+	</include>
 	<include name="skinshortcuts-group-info-weather-temperature">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-alt-info-weather-temperature">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-info-weather-temperature-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-info-weather-temperature-1">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-num-1">
@@ -1008,6 +1040,12 @@
 			<property name="group">1</property>
 			<property name="isSubmenu">True</property>
 		</item>
+	</include>
+	<include name="skinshortcuts-group-num-1-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-1-1">
+		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-num-31059">
 		<item id="1">
@@ -1149,6 +1187,12 @@
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
+	<include name="skinshortcuts-group-num-31059-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-31059-1">
+		<description>No items</description>
+	</include>
 	<include name="skinshortcuts-group-info-pvr-nowrecordingtitle">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -1289,10 +1333,22 @@
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
+	<include name="skinshortcuts-group-info-pvr-nowrecordingtitle-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-info-pvr-nowrecordingtitle-1">
+		<description>No items</description>
+	</include>
 	<include name="skinshortcuts-group-num-1036">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-alt-num-1036">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-num-1036-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-1036-1">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-num-31422">
@@ -1301,10 +1357,22 @@
 	<include name="skinshortcuts-group-alt-num-31422">
 		<description>No items</description>
 	</include>
+	<include name="skinshortcuts-group-num-31422-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-31422-1">
+		<description>No items</description>
+	</include>
 	<include name="skinshortcuts-group-num-31037">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-alt-num-31037">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-num-31037-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-31037-1">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-num-20094">
@@ -1313,10 +1381,22 @@
 	<include name="skinshortcuts-group-alt-num-20094">
 		<description>No items</description>
 	</include>
+	<include name="skinshortcuts-group-num-20094-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-20094-1">
+		<description>No items</description>
+	</include>
 	<include name="skinshortcuts-group-script-globalsearch">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-alt-script-globalsearch">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-script-globalsearch-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-script-globalsearch-1">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-num-5">
@@ -1453,16 +1533,34 @@
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
+	<include name="skinshortcuts-group-num-5-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-5-1">
+		<description>No items</description>
+	</include>
 	<include name="skinshortcuts-group-num-33060">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-alt-num-33060">
 		<description>No items</description>
 	</include>
+	<include name="skinshortcuts-group-num-33060-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-33060-1">
+		<description>No items</description>
+	</include>
 	<include name="skinshortcuts-group-33060-0">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-alt-33060-0">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-33060-0-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-33060-0-1">
 		<description>No items</description>
 	</include>
 </includes>

@@ -234,7 +234,7 @@
     </include>	
     <include name="HomeBackground">	
         <control type="image" description="HomeBackground">
-			<visible>IsEmpty(Skin.String(CustomBgHome)) + !Skin.HasTheme(White)</visible>
+			<visible>IsEmpty(Skin.String(CustomBgHome)) + ![Skin.HasTheme(Dark)|Skin.HasTheme(White)]</visible>
             <width>1920</width>
             <height>1080</height>
             <aspectratio>stretch</aspectratio>
@@ -242,7 +242,7 @@
 			<texture colordiffuse="$VAR[HomeColor]">$VAR[HomeBG]</texture>
         </control>
         <control type="image" description="HomeBackground">
-			<visible>!IsEmpty(Skin.String(CustomBgHome)) | !IsEmpty(Container(9000).ListItem.Property(Background) | Skin.HasTheme(White)</visible>
+			<visible>!IsEmpty(Skin.String(CustomBgHome)) | !IsEmpty(Container(9000).ListItem.Property(Background) | Skin.HasTheme(Dark) |Skin.HasTheme(White)</visible>
             <width>1920</width>
             <height>1080</height>
             <aspectratio>stretch</aspectratio>
@@ -258,14 +258,14 @@
     </include>	
     <include name="OtherBackground">			
         <control type="image" description="OtherBG">
-			<visible>IsEmpty(Skin.String(CustomBgOther)) + !Skin.HasTheme(White)</visible>
+			<visible>IsEmpty(Skin.String(CustomBgOther)) + ![Skin.HasTheme(Dark)|Skin.HasTheme(White)]</visible>
             <width>1920</width>
             <height>1080</height>
             <aspectratio>stretch</aspectratio>
 			<texture colordiffuse="$VAR[OtherColor]">$VAR[OtherBG]</texture>
         </control>
         <control type="image" description="OtherBG">
-			<visible>!IsEmpty(Skin.String(CustomBgOther)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(White)</visible>
+			<visible>!IsEmpty(Skin.String(CustomBgOther)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(Dark) |Skin.HasTheme(White)</visible>
             <width>1920</width>
             <height>1080</height>
             <aspectratio>stretch</aspectratio>
@@ -872,7 +872,7 @@
                     <texture>$INFO[ListItem.Icon]</texture>
                 </control>
 				<control type="image">
-					<visible>!Skin.HasSetting(HomeZoom)</visible>						
+					<visible>!Skin.HasSetting(HomeIconZoom)</visible>						
 					<animation effect="fade" start="0" end="100" time="120">Focus</animation>
 					<animation effect="fade" start="100" end="0" time="120">unFocus</animation>					
                     <left>80</left>
@@ -951,5 +951,15 @@
 	</include>	
     <include name="DialogTextureBG">
 		<texture border="50" diffuse="images/DialogDiffuse.png">$VAR[DialogBG]</texture>	
+	</include>
+    <include name="FanartBackground">
+        <control type="image">
+			<visible>!Skin.HasSetting(Fanart)</visible>
+            <include>Dimensions_Fullscreen</include>
+            <include>Fanart_Fade</include>
+            <texture background="true">$INFO[ListItem.Property(fanart_image)]</texture>
+			<colordiffuse>$VAR[diffusefanart]</colordiffuse>
+            <aspectratio>stretch</aspectratio>
+        </control>	
 	</include>		
 </includes>

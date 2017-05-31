@@ -7,28 +7,7 @@
     <include>OpenClose</include>
     <controls>
         <include>OtherBackground</include>
-        <control type="image">
-			<!-- FANART - ALL OTHER VIEWS -->
-            <visible>!Control.IsVisible(53)</visible>
-			<visible>!Skin.HasSetting(Fanart)</visible>
-            <include>Dimensions_Fullscreen</include>
-            <include>Fanart_Fade</include>
-            <texture background="true">$INFO[ListItem.Property(fanart_image)]</texture>
-            <!--colordiffuse>10ffffff</colordiffuse-->
-			<colordiffuse>ff161616</colordiffuse>
-            <aspectratio>stretch</aspectratio>
-        </control>
-        <control type="image">
-			<!-- FANART - ICON VIEW -->
-            <visible>Control.IsVisible(53)</visible>
-			<visible>!Skin.HasSetting(Fanart)</visible>
-            <include>Dimensions_Fullscreen</include>
-            <include>Fanart_Fade</include>
-            <texture background="true">$INFO[ListItem.Property(fanart_image)]</texture>
-            <!--colordiffuse>10ffffff</colordiffuse-->
-			<colordiffuse>ff262626</colordiffuse>
-            <aspectratio>stretch</aspectratio>
-        </control>
+		<include>FanartBackground</include>
 		<include>Clock</include>		
         <control type="label" description="Heading">
             <visible>!Control.IsVisible(53)</visible>
@@ -60,8 +39,8 @@
 				<width>802</width>
 				<height>986</height>
 				<aspectratio>stretch</aspectratio>
-				<include condition="IsEmpty(Skin.String(CustomBgDialog)) + IsEmpty(Skin.String(CustomBgHome)) + !Skin.HasTheme(White)">DialogTexture</include>
-				<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(White)">DialogTextureBG</include>	
+				<include condition="IsEmpty(Skin.String(CustomBgDialog)) + IsEmpty(Skin.String(CustomBgHome)) + ![Skin.HasTheme(Dark)|Skin.HasTheme(White)]">DialogTexture</include>
+				<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(Dark) | Skin.HasTheme(White)">DialogTextureBG</include>	
 			</control>	
 			<control type="image" description="List back diffuse">
 				<centerleft>960</centerleft>

@@ -5,6 +5,7 @@
     <include>OpenClose</include>
     <controls>
         <include>OtherBackground</include>
+		<!--include>FanartBackground</include-->
         <control type="label" description="Header label">
             <include>Heading</include>
             <label>1036</label>

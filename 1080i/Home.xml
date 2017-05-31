@@ -5,7 +5,7 @@
     <allowoverlay>no</allowoverlay>
     <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;level=0)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=1)</onload>
-    <include>HomeOpenClose</include>
+    <include condition="!Skin.HasSetting(HomeZoom)">HomeOpenClose</include>
     <controls>
         <include>HomeBackground</include>
         <!--CLONING-->
@@ -54,7 +54,7 @@
 			<include>Fanart_Fade</include>
 			<aspectratio align="top">scale</aspectratio>
 			<texture background="true">$VAR[ShelfFanart]</texture>
-			<colordiffuse>ff262626</colordiffuse>
+			<colordiffuse>$VAR[diffuseshelffanart]</colordiffuse>
 		</control>		
         <control type="button" id="9009" description="Shelf Label">
 			<visible>!Player.HasVideo + ![Control.HasFocus(9010) | Control.HasFocus(321)]</visible>
@@ -72,7 +72,7 @@
             <align>left</align>
             <aligny>center</aligny>
             <font>shelf</font>
-            <textcolor>ffb8b8b8</textcolor>
+            <textcolor>darktextunfo</textcolor>
             <label>$VAR[shelflabel]</label>
             <texturefocus>-</texturefocus>
             <!--MOVIES-->
@@ -135,7 +135,7 @@
 					<font>shelf</font>
 					<label>$INFO[ListItem.Label]</label>
 					<scroll>false</scroll>
-					<textcolor>ffb8b8b8</textcolor>
+					<textcolor>darktextunfo</textcolor>
 				</control>
 			</itemlayout>				
 			<focusedlayout height="45" width="300">
@@ -155,7 +155,7 @@
 			<content><include>skinshortcuts-submenu</include></content>
 		</control>				
         <control type="panel" id="9000" description="Home Icons">
-            <include>HomePanelOpenClose</include>
+			<include condition="!Skin.HasSetting(HomeZoom)">HomePanelOpenClose</include>
             <include>homeanimation</include>
             <centerleft>960</centerleft>
             <top>740</top>
@@ -191,20 +191,21 @@
                     <aspectratio scalediffuse="false">scale</aspectratio>
                 </control>
                 <control type="label" description="label">
+					<visible>[!Skin.HasSetting(labelunfo) + [![Skin.HasTheme(Dark)|Skin.HasTheme(White)]]] | [Skin.HasSetting(labelunfo) + [Skin.HasTheme(Dark)|Skin.HasTheme(White)]]</visible>
                     <centerleft>180</centerleft>
                     <top>220</top>
                     <width>368</width>
                     <height>24</height>
                     <font>size28</font>
-					<textcolor>darktextunfo</textcolor>
+					<textcolor>icontextunfo</textcolor>
                     <align>center</align>
                     <label>$INFO[ListItem.label]</label>
                 </control>				
             </itemlayout>
             <focusedlayout height="265" width="360" condition="Container(9000).Row(0)">
                 <control type="group">
-					<include condition="Skin.HasSetting(HomeZoom)">HomeZoomTop</include>
-					<include condition="Skin.HasSetting(HomeZoom)">HomeZoomShadow</include>
+					<include condition="Skin.HasSetting(HomeIconZoom)|Skin.HasTheme(Dark)|Skin.HasTheme(White)">HomeIconZoomTop</include>
+					<include condition="Skin.HasSetting(HomeIconZoom)|Skin.HasTheme(Dark)|Skin.HasTheme(White)">HomeIconZoomShadow</include>
                     <control type="image" description="color base">
                         <centerleft>180</centerleft>
                         <centertop>117</centertop>
@@ -229,15 +230,15 @@
                     <width>368</width>
                     <height>24</height>
                     <font>size28</font>
-					<textcolor>darktext</textcolor>
+					<textcolor>icontext</textcolor>
                     <align>center</align>
                     <label>[B]$INFO[ListItem.label][/B]</label>
                 </control>
             </focusedlayout>						
             <focusedlayout height="265" width="360" condition="!Container(9000).Row(0)">			
                 <control type="group">
-					<include condition="Skin.HasSetting(HomeZoom)">HomeZoom</include>
-					<include condition="Skin.HasSetting(HomeZoom)">HomeZoomShadow</include>	
+					<include condition="Skin.HasSetting(HomeIconZoom)|Skin.HasTheme(Dark)|Skin.HasTheme(White)">HomeIconZoom</include>
+					<include condition="Skin.HasSetting(HomeIconZoom)|Skin.HasTheme(Dark)|Skin.HasTheme(White)">HomeIconZoomShadow</include>	
                     <control type="image" description="color base">
                         <centerleft>180</centerleft>
                         <centertop>117</centertop>
@@ -262,14 +263,14 @@
                     <width>368</width>
                     <height>24</height>
                     <font>size28</font>
-					<textcolor>darktext</textcolor>
+					<textcolor>icontext</textcolor>
                     <align>center</align>
                     <label>[B]$INFO[ListItem.label][/B]</label>
                 </control>
             </focusedlayout>		
             <content><include>skinshortcuts-mainmenu</include></content>
         </control>
-		<include condition="!Skin.HasSetting(HomeZoom)">HomeSlider</include>				
+		<include condition="!Skin.HasSetting(HomeIconZoom) + ![Skin.HasTheme(Dark)|Skin.HasTheme(White)]">HomeSlider</include>				
         <control type="group" id="700" description="Shelf items">
 			<visible>Container(9000).Row(0)+ !Player.HasVideo</visible>
 			<animation effect="fade" start="0" end="100" time="220">Visible</animation>

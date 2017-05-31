@@ -88,8 +88,92 @@
                     <label>$LOCALIZE[31076]</label>
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
                     <onclick>Skin.ToggleSetting(StartupSplash)</onclick>
-                    <selected>!Skin.HasSetting(StartupSplash)</selected>
-                </control>				
+                    <selected>Skin.HasSetting(StartupSplash)</selected>
+                </control>
+                <control type="radiobutton" id="6" description="Loading">				
+                    <width>840</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31102]</label>
+                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
+                    <onclick>Skin.ToggleSetting(loading)</onclick>
+                    <selected>Skin.HasSetting(loading)</selected>
+                </control>
+                <control type="radiobutton" id="7" description="Label unfo">
+					<visible>!Skin.HasTheme(White)</visible>				
+                    <width>840</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31103]</label>
+                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
+                    <onclick>Skin.ToggleSetting(labelunfo)</onclick>
+                    <selected>!Skin.HasSetting(labelunfo)</selected>
+                </control>
+                <control type="radiobutton" id="8" description="Label unfo Invert">	
+					<visible>Skin.HasTheme(White)</visible>
+                    <width>840</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31103]</label>
+                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
+                    <onclick>Skin.ToggleSetting(labelunfo)</onclick>
+                    <selected>Skin.HasSetting(labelunfo)</selected>
+                </control>
+                <control type="radiobutton" id="9" description="Video Preview BG">	
+					<!--visible>Skin.HasTheme(White)</visible-->
+                    <width>840</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31105]</label>
+                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
+                    <onclick>Skin.ToggleSetting(PVRVideoBG)</onclick>
+                    <selected>!Skin.HasSetting(PVRVideoBG)</selected>
+                </control>
+
+
+
+
+                <control type="radiobutton" id="10" description="PVR Icons">	
+					<!--visible>Skin.HasTheme(White)</visible-->
+                    <width>840</width>
+                    <align>left</align>
+                    <label>$VAR[pvriconlabel]</label>
+                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
+                    <onclick>Skin.ToggleSetting(PVRicons)</onclick>
+                    <selected>!Skin.HasSetting(PVRicons)|Skin.HasSetting(PVRicons)</selected>
+                </control>	
+
+
+                <control type="button" id="11" description="Reset ALL SkinSettings">
+                    <width>840</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31036]</label>
+                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
+                    <onclick>Skin.ResetSettings</onclick>
+                    <onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
+                    <onclick>XBMC.ReloadSkin()</onclick>
+                </control>
+                <control type="button" id="12" description="Reset HomeSettings Only">
+                    <width>840</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31106]</label>
+                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
+                    <!--onclick>Skin.ResetSettings</onclick-->
+                    <onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
+                    <onclick>XBMC.ReloadSkin()</onclick>
+                </control>
+                <control type="button" id="13" description="Reset SkinSettings Only">
+                    <width>840</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31107]</label>
+                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
+                    <onclick>Skin.ResetSettings</onclick>
+                    <!--onclick>RunScript(script.skinshortcuts,type=resetall)</onclick-->
+                    <onclick>XBMC.ReloadSkin()</onclick>
+                </control>					
+                <control type="button" id="14" description="Debug">
+                    <width>840</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31068]</label>
+                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
+                    <onclick>Skin.ToggleDebug</onclick>
+                </control>		
             </control>
         </control>
         <control type="image">

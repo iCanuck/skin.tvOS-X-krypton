@@ -17,15 +17,24 @@
                 <onup>50</onup>
                 <ondown>50</ondown>
                 <itemgap>14</itemgap>
-                <control type="radiobutton" id="1" description="Home Icon Zoom Animation">				
+                <control type="radiobutton" id="1" description="Home Panel Zoom Animation">
+                    <width>840</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31104]</label>
+                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
+                    <onclick>Skin.ToggleSetting(HomeZoom)</onclick>
+                    <selected>!Skin.HasSetting(HomeZoom)</selected>
+                </control>				
+                <control type="radiobutton" id="2" description="Home Icon Zoom Animation">
+					<visible>![Skin.HasTheme(Dark)|Skin.HasTheme(White)]</visible>
                     <width>840</width>
                     <align>left</align>
                     <label>$LOCALIZE[31071]</label>
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>Skin.ToggleSetting(HomeZoom)</onclick>
-                    <selected>Skin.HasSetting(HomeZoom)</selected>
+                    <onclick>Skin.ToggleSetting(HomeIconZoom)</onclick>
+                    <selected>Skin.HasSetting(HomeIconZoom)</selected>
                 </control>				
-                <control type="radiobutton" id="2">
+                <control type="radiobutton" id="3">
                     <width>840</width>
                     <align>left</align>
                     <label>$LOCALIZE[31047]</label>
@@ -33,7 +42,7 @@
                     <onclick>Skin.ToggleSetting(upcomingmovies)</onclick>
                     <selected>Skin.HasSetting(upcomingmovies)</selected>
                 </control>				
-                <control type="radiobutton" id="3" description="Home Banner">				
+                <control type="radiobutton" id="4" description="Home Banner">				
                     <width>840</width>
                     <align>left</align>
                     <label>$LOCALIZE[31072]</label>
@@ -41,7 +50,7 @@
                     <onclick>Skin.ToggleSetting(HomeBanner)</onclick>
                     <selected>!Skin.HasSetting(HomeBanner)</selected>
                 </control>	
-                <control type="radiobutton" id="4" description="Home Banner Animation">				
+                <control type="radiobutton" id="5" description="Home Banner Animation">				
                     <width>840</width>
                     <align>left</align>
                     <label>$LOCALIZE[31073]</label>
@@ -49,7 +58,7 @@
                     <onclick>Skin.ToggleSetting(HomeBannerAnimation)</onclick>
                     <selected>Skin.HasSetting(HomeBannerAnimation)</selected>
                 </control>
-                <control type="button" id="5" description="Custom Banner Color">
+                <control type="button" id="6" description="Custom Banner Color">
                     <width>840</width>
                     <align>left</align>
                     <label>$LOCALIZE[31084]</label>

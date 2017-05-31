@@ -18,8 +18,8 @@
 		<width>802</width>
 		<height>726</height>
 		<aspectratio>stretch</aspectratio>
-		<include condition="IsEmpty(Skin.String(CustomBgDialog)) + IsEmpty(Skin.String(CustomBgHome)) + !Skin.HasTheme(White)">DialogTexture</include>
-		<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(White)">DialogTextureBG</include>	
+		<include condition="IsEmpty(Skin.String(CustomBgDialog)) + IsEmpty(Skin.String(CustomBgHome)) + ![Skin.HasTheme(Dark)|Skin.HasTheme(White)]">DialogTexture</include>
+		<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(Dark) | Skin.HasTheme(White)">DialogTextureBG</include>	
 	</control>	
 	<control type="image" description="List back diffuse">
 		<centerleft>960</centerleft>
@@ -53,7 +53,7 @@
 		<align>center</align>
 		<aligny>center</aligny>
 		<font>size30</font>
-		<!--textcolor>50details</textcolor-->
+		<textcolor>darktextunfo</textcolor>
 	  </control>	  
 	  <control type="radiobutton" id="1">
 		<label>$LOCALIZE[31081] 1</label>

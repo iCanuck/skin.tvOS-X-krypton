@@ -3,33 +3,63 @@
   <defaultcontrol>9000</defaultcontrol>
   <include>DialogOpenClose</include>
   <controls>
-  
-	<control type="image" description="List back border">
-	  <centerleft>960</centerleft>
-	  <centertop>540</centertop>
-	  <width>738</width>
-	  <height>688</height>
-	  <aspectratio>stretch</aspectratio>
-	  <texture>$VAR[BorderColor]</texture>	  
-	</control>	
 	<control type="image" description="List back">
+	  <visible>!System.HasAddon(service.libreelec.settings) | System.HasLoginScreen</visible>	
 		<centerleft>960</centerleft>
 		<centertop>540</centertop>
 		<width>802</width>
 		<height>766</height>
 		<aspectratio>stretch</aspectratio>
-		<include condition="IsEmpty(Skin.String(CustomBgDialog)) + IsEmpty(Skin.String(CustomBgHome)) + !Skin.HasTheme(White)">DialogTexture</include>
-		<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(White)">DialogTextureBG</include>
-	</control>	
+		<include condition="IsEmpty(Skin.String(CustomBgDialog)) + IsEmpty(Skin.String(CustomBgHome)) + ![Skin.HasTheme(Dark)|Skin.HasTheme(White)]">DialogTexture</include>
+		<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(Dark) | Skin.HasTheme(White)">DialogTextureBG</include>
+	</control>
+	<control type="image" description="List back short">
+		<visible>System.HasAddon(service.libreelec.settings) + !System.HasLoginScreen</visible>
+		<centerleft>960</centerleft>
+		<centertop>540</centertop>
+		<width>802</width>
+		<height>520</height>
+		<aspectratio>stretch</aspectratio>
+		<include condition="IsEmpty(Skin.String(CustomBgDialog)) + IsEmpty(Skin.String(CustomBgHome)) + ![Skin.HasTheme(Dark)|Skin.HasTheme(White)]">DialogTexture</include>
+		<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(Dark) | Skin.HasTheme(White)">DialogTextureBG</include>		
+	</control>
 	<control type="image" description="List back diffuse">
+	    <visible>!System.HasAddon(service.libreelec.settings) + System.HasLoginScreen</visible>	
 		<centerleft>960</centerleft>
 		<centertop>540</centertop>
 		<width>802</width>
 		<height>766</height>
 		<aspectratio>stretch</aspectratio>
 		<texture border="50" colordiffuse="$VAR[diffusedialog]" diffuse="images/DialogDiffuse.png">images/whitebg.png</texture>
-	</control>  
-    
+	</control>	
+	<control type="image" description="List back diffuse">
+		<visible>System.HasAddon(service.libreelec.settings) + !System.HasLoginScreen</visible>
+		<centerleft>960</centerleft>
+		<centertop>540</centertop>
+		<width>802</width>
+		<height>520</height>
+		<aspectratio>stretch</aspectratio>
+		<texture border="50" colordiffuse="$VAR[diffusedialog]" diffuse="images/DialogDiffuse.png">images/whitebg.png</texture>
+	</control>
+	<control type="image" description="List back border">
+	  <visible>!System.HasAddon(service.libreelec.settings) + System.HasLoginScreen</visible>
+	  <centerleft>960</centerleft>
+	  <centertop>540</centertop>
+	  <width>738</width>
+	  <height>730</height>
+	  <aspectratio>stretch</aspectratio>
+	  <texture>$VAR[BorderColor]</texture>	  
+	</control>
+	<control type="image" description="List back border">
+	  <visible>System.HasAddon(service.libreelec.settings) + !System.HasLoginScreen</visible>
+	  <centerleft>960</centerleft>
+	  <centertop>540</centertop>
+	  <width>738</width>
+	  <height>456</height>
+	  <aspectratio>stretch</aspectratio>
+	  <texture>$VAR[BorderColor]</texture>	  
+	</control>
+	    
 <!-- OLD 
 	<control type="image" description="List back border">
 	  <centerleft>960</centerleft>
@@ -100,7 +130,8 @@
         <label>13013</label>
       </control>
       <control type="button" id="5" description="LogOff">
-        <enable>System.HasLoginScreen</enable>
+        <!--enable>System.HasLoginScreen</enable-->
+		<visible>System.HasLoginScreen</visible>
         <include>DialogButt</include>
         <onclick>Activatewindow(29)</onclick>
         <label>logoff</label>

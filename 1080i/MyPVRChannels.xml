@@ -54,7 +54,7 @@
                         <font>size26</font>
                         <textcolor>gray</textcolor>
                         <align>center</align>
-                        <label>$INFO[Container(11).ListItem.StartTime] • [COLOR=red][B]$INFO[Container(11).ListItem.Title][/B][/COLOR] • $INFO[Container(11).ListItem.EndTime]</label>
+                        <label>$INFO[Container(11).ListItem.StartTime] • [COLOR=darktextunfo][B]$INFO[Container(11).ListItem.Title][/B][/COLOR] • $INFO[Container(11).ListItem.EndTime]</label>
                     </control>
                     <control type="label">
                         <width>760</width>
@@ -92,7 +92,7 @@
                     <top>96</top>
                     <include>LargeListItemCount</include>
                     <control type="fixedlist" id="11">
-                        <width>802</width>
+                        <width>882</width>
                         <height>984</height>
                         <onleft>9000</onleft>
                         <onright>noop</onright>
@@ -119,27 +119,27 @@
                                 <info>ListItem.Title</info>
                             </control>
                             <control type="image">
-                                <left>710</left>
-                                <top>15</top>
-                                <width>81</width>
-                                <height>81</height>
-                                <aspectratio>keep</aspectratio>
+                                <left>596</left>
+                                <top>13</top>
+								<width>234</width>
+								<height>74</height>
+								<aspectratio>keep</aspectratio>
                                 <texture>$INFO[ListItem.Icon]</texture>
                                 <visible>![ListItem.IsRecording | ListItem.HasTimer]</visible>
                             </control>
                             <control type="image" description="rec">
-                                <left>720</left>
-                                <top>15</top>
-                                <height>81</height>
-                                <width>81</width>
+                                <left>796</left>
+                                <top>30</top>
+                                <height>40</height>
+                                <width>40</width>
                                 <texture>pvr/rec.png</texture>
                                 <visible>ListItem.IsRecording</visible>
                             </control>
                             <control type="image" description="timer">
-                                <left>720</left>
-                                <top>15</top>
-                                <height>81</height>
-                                <width>81</width>
+                                <left>796</left>
+                                <top>30</top>
+                                <height>40</height>
+                                <width>40</width>
                                 <texture>pvr/timer.png</texture>
                                 <visible>!ListItem.IsRecording + ListItem.HasTimer</visible>
                             </control>
@@ -156,7 +156,7 @@
                                 </control>
                                 <control type="image">
                                     <height>100</height>
-                                    <width>805</width>
+                                    <width>845</width>
                                     <texture border="8">images/White.png</texture>
                                 </control>
                                 <control type="label">
@@ -172,28 +172,28 @@
                                     <include>BigListDetailsFO</include>
                                     <info>ListItem.Title</info>
                                 </control>
-                                <control type="image">
-                                    <left>710</left>
-                                    <top>15</top>
-                                    <width>81</width>
-                                    <height>81</height>
-                                    <aspectratio>keep</aspectratio>
-                                    <texture>$INFO[ListItem.Icon]</texture>
-                                    <visible>![ListItem.IsRecording | ListItem.HasTimer]</visible>
-                                </control>
+								<control type="image">
+									<left>596</left>
+									<top>13</top>
+									<width>234</width>
+									<height>74</height>
+									<aspectratio>keep</aspectratio>
+									<texture>$INFO[ListItem.Icon]</texture>
+									<visible>![ListItem.IsRecording | ListItem.HasTimer]</visible>
+								</control>
                                 <control type="image" description="rec">
-                                    <left>720</left>
-                                    <top>15</top>
-                                    <height>81</height>
-                                    <width>81</width>
+									<left>796</left>
+									<top>30</top>
+									<height>40</height>
+									<width>40</width>
                                     <texture>pvr/rec.png</texture>
                                     <visible>ListItem.IsRecording</visible>
                                 </control>
                                 <control type="image" description="timer">
-                                    <left>720</left>
-                                    <top>15</top>
-                                    <height>81</height>
-                                    <width>81</width>
+									<left>796</left>
+									<top>30</top>
+									<height>40</height>
+									<width>40</width>
                                     <texture>pvr/timer.png</texture>
                                     <visible>!ListItem.IsRecording + ListItem.HasTimer</visible>
                                 </control>

@@ -5,23 +5,15 @@
     <controls>
         <control type="group" description="choiceAddons">
             <include>DialogOpenCloseVisible</include>
-
-			<control type="image" description="List back border">
-			  <centerleft>960</centerleft>
-			  <centertop>540</centertop>
-              <width>738</width>
-              <height>442</height>
-			  <aspectratio>stretch</aspectratio>
-			  <texture>$VAR[BorderColor]</texture>	  
-			</control>	
+	
             <control type="image" description="List back">
                 <centerleft>960</centerleft>
                 <centertop>540</centertop>
                 <width>802</width>
                 <height>520</height>
                 <aspectratio>stretch</aspectratio>
-				<include condition="IsEmpty(Skin.String(CustomBgDialog)) + IsEmpty(Skin.String(CustomBgHome)) + !Skin.HasTheme(White)">DialogTexture</include>
-				<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(White)">DialogTextureBG</include>
+				<include condition="IsEmpty(Skin.String(CustomBgDialog)) + IsEmpty(Skin.String(CustomBgHome)) + ![Skin.HasTheme(Dark)|Skin.HasTheme(White)]">DialogTexture</include>
+				<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(Dark) | Skin.HasTheme(White)">DialogTextureBG</include>
             </control>	
             <control type="image" description="List back diffuse">
                 <centerleft>960</centerleft>
@@ -31,7 +23,14 @@
                 <aspectratio>stretch</aspectratio>
 				<texture border="50" colordiffuse="$VAR[diffusedialog]" diffuse="images/DialogDiffuse.png">images/whitebg.png</texture>
             </control>
-		
+			<control type="image" description="List back border">
+			  <centerleft>960</centerleft>
+			  <centertop>540</centertop>
+              <width>738</width>
+              <height>456</height>
+			  <aspectratio>stretch</aspectratio>
+			  <texture>$VAR[BorderColor]</texture>	  
+			</control>		
 <!--			
             <control type="image" description="List back">
                 <centerleft>960</centerleft>

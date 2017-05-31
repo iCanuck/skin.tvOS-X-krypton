@@ -93,19 +93,20 @@
 		<animation condition="Container(9000).Row(8)" effect="slide" end="0,779" time="190">Conditional</animation-->		
 	  </control>	
     </include>	
-	<include name="HomeZoomTop">
+	<include name="HomeIconZoomTop">
 		<animation effect="zoom" start="100" end="122" time="120" center="180,208" tween="Back" easing="Out">Focus</animation>
 		<animation effect="zoom" start="122" end="100" time="120" center="180,208">unFocus</animation>					
 		<animation effect="zoom" start="100" end="322" time="120" center="180,208" tween="Back" easing="Out">onClick</animation> 
 	</include>
-	<include name="HomeZoom">   
+	<include name="HomeIconZoom">   
 		<animation effect="zoom" start="100" end="125" time="120" center="auto" tween="Back" easing="Out">Focus</animation>
 		<animation effect="zoom" start="125" end="100" time="200" center="auto">unFocus</animation>	 
 	</include>
- 	<include name="HomeZoomShadow"> 
+ 	<include name="HomeIconZoomShadow"> 
 		<control type="image" description="shade_base">
 		    <animation effect="fade" start="0" end="100" time="180">Focus</animation>
             <animation effect="fade" start="100" end="0" time="100">unFocus</animation>
+			<top>40</top>
 			<centerleft>180</centerleft>
 			<animation effect="slide" start="0,0" end="0,34" time="240" reversible="true" tween="Back" easing="Out">Focus</animation>
 			<width>350</width>
@@ -125,9 +126,4 @@
 		<animation condition="!Container(9000).Row(0)" effect="slide" start="0,0" end="0,-131" time="220">Conditonal</animation>
 		<animation condition="[![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2)]]" effect="slide" start="0,0" end="0,-900" time="220">Conditonal</animation>
 	</include--> 
-
-
-
-
-	
 </includes>

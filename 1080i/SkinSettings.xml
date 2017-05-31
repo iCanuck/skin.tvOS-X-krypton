@@ -47,22 +47,13 @@
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
                     <onclick>ActivateWindow(1706)</onclick>
                 </control>
-                <control type="radiobutton" id="4" description="Fanart">				
+                <control type="button" id="4" description="Fanart Bkgd Settings">
                     <width>840</width>
                     <align>left</align>
-                    <label>$LOCALIZE[31075]</label>
+                    <label>$LOCALIZE[31101]</label>
                     <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>Skin.ToggleSetting(FanArt)</onclick>
-                    <selected>!Skin.HasSetting(FanArt)</selected>
-                </control>
-                <control type="radiobutton" id="5" description="Shelf Fanart">				
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31094]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>Skin.ToggleSetting(ShelfFanart)</onclick>
-                    <selected>!Skin.HasSetting(ShelfFanart)</selected>
-                </control>
+                    <onclick>ActivateWindow(1709)</onclick>
+                </control>				
                 <control type="radiobutton" id="6" description="Fanart for Episodes">
                     <width>840</width>
                     <align>left</align>
@@ -86,23 +77,7 @@
                     <texturenofocus border="9" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
                     <onclick>Skin.Theme(1)</onclick>
                 </control>
-                <control type="button" id="9" description="Reset SkinSettings">
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31036]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>Skin.ResetSettings</onclick>
-                    <onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
-                    <onclick>XBMC.ReloadSkin()</onclick>
-                </control>
-                <control type="button" id="10" description="Debug">
-                    <width>840</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31068]</label>
-                    <texturenofocus border="8" colordiffuse="$VAR[bannercolor]">images/White.png</texturenofocus>
-                    <onclick>Skin.ToggleDebug</onclick>
-                </control>	
-                <control type="button" id="11" description="Adv. Settings">
+                <control type="button" id="9" description="Adv. Settings">
                     <width>840</width>
                     <align>left</align>
                     <label>$LOCALIZE[31098] $LOCALIZE[31097]</label>

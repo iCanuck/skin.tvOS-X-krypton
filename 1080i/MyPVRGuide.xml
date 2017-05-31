@@ -15,9 +15,41 @@
             <description>passes the values up one level</description>
             <visible>False</visible>
         </control>
+		
+		
+		
+	<!-- VIDEO BKGD -->
+		<control type="group">
+			<visible>!Skin.HasSetting(PVRVideoBG)</visible>
+			<control type="videowindow" description="Video BG">
+				<width>1920</width>
+				<height>1080</height>
+				<visible>Player.HasVideo</visible>
+				<aspectratio>scale</aspectratio>
+				<!--colordiffuse>FF878787</colordiffuse-->
+			</control>	
+			<control type="image" description="Video BG Diffuse">
+				<width>1920</width>
+				<height>1080</height>
+				<visible>Player.HasVideo</visible>
+				<aspectratio>scale</aspectratio>
+				<texture colordiffuse="$VAR[diffusepvrvideo]">images/White.png</texture>
+			</control>
+		</control>		
+        <control type="videowindow">
+			<visible>Skin.HasSetting(PVRVideoBG)</visible>
+            <left>1320</left>
+            <top>30</top>
+            <width>464</width>
+            <height>280</height>
+            <visible>Player.HasVideo</visible>
+        </control>		
+		
+<!-- EPG - Channel List + Content -->			
         <control type="group" id="50">
             <include>OpenClose</include>
             <control type="group">
+				<top>172</top>
                 <description>TV Guide Timeline</description>
                 <visible>Control.IsVisible(10)</visible>
                 <include>VisibleFade</include>
@@ -29,106 +61,152 @@
                 <!--</control>-->
                 <control type="epggrid" id="10">
                     <description>EPG Grid</description>
-                    <top>80</top>
+                    <top>144</top>
                     <width>1920</width>
-                    <height>999</height>
+                    <height>720</height>
                     <pagecontrol>10</pagecontrol>
                     <scrolltime>350</scrolltime>
-                    <timeblocks>36</timeblocks>
+                    <timeblocks>24</timeblocks>
                     <rulerunit>6</rulerunit>
-                    <progresstexture border="15">pvr/EpgProgressIndicator.png</progresstexture>
+                    <progresstexture border="5">pvr/EpgProgressIndicator.png</progresstexture>
                     <onleft>31</onleft>
                     <onright>31</onright>
                     <onup>9000</onup>
                     <ondown>10</ondown>
-                    <rulerlayout height="35">
+<!-- EPG - Top Bar - Time -->					
+					<rulerlayout height="35" width="20">
                         <control type="label" id="2">
                             <left>10</left>
                             <width>34</width>
                             <height>29</height>
-                            <font>font12</font>
+                            <font>font14</font>
                             <aligny>center</aligny>
                             <selectedcolor>red</selectedcolor>
                             <align>left</align>
+							<textcolor>darktextunfo</textcolor>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                     </rulerlayout>
-                    <channellayout height="50" width="380">
+<!-- EPG - Left Panel - Channels -->					
+                    <channellayout height="76" width="320">
                         <!--<animation effect="fade" start="110" time="200">UnFocus</animation>-->
                         <control type="image" id="1">
-                            <left>45</left>
-                            <width>330</width>
-                            <height>50</height>
-                            <texture border="8" colordiffuse="99777777">pvr/pvrbutton.png</texture>
+							<top>2</top>
+							<right>4</right>
+							<width>234</width>
+							<height>76</height>
+                            <texture border="8" colordiffuse="$VAR[bannercolor]">
+							pvr/pvrbutton.png</texture>
+							<align>right</align>
+							<aligny>center</aligny>
                         </control>
-                        <control type="label">
-                            <width>40</width>
-                            <height>50</height>
-                            <font>font12</font>
-                            <align>right</align>
-                            <aligny>center</aligny>
-                            <textcolor>gray</textcolor>
-                            <selectedcolor>red</selectedcolor>
-                            <info>ListItem.ChannelNumber</info>
-                        </control>
-                        <control type="label" id="1">
-                            <left>60</left>
-                            <top>0</top>
-                            <width>300</width>
-                            <height>50</height>
-                            <font>Size26</font>
-                            <aligny>center</aligny>
-                            <selectedcolor>red</selectedcolor>
-                            <align>left</align>
-                            <scroll>false</scroll>
+						<control type="label" description="Channel Number">
+							<width>60</width>
+							<height>76</height>
+							<font>size27</font>
+							<align>right</align>
+							<aligny>center</aligny>
+							<textcolor>darktextunfo</textcolor>
+							<selectedcolor>red</selectedcolor>
+							<info>ListItem.ChannelNumber</info>
+						</control>
+                        <control type="label" id="1" description="Channel Name">
+							<!--visible>IsEmpty(ListItem.Icon)</visible-->
+							<right>16</right>
+							<width>214</width>
+							<height>76</height>
+							<font>Size24</font>
+							<aligny>center</aligny>
+							<textcolor>darktextunfo</textcolor>
+							<selectedcolor>red</selectedcolor>
+							<align>right</align>
+							<scroll>false</scroll>
                             <label>$INFO[ListItem.ChannelName]</label>
                         </control>
+						<control type="image" description="Channel Icon">
+							<visible>!Skin.HasSetting(PVRicons)</visible>
+							<top>1</top>
+							<right>4</right>
+							<width>234</width>
+							<height>74</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<align>right</align>
+							<aligny>center</aligny>
+						</control>							
                     </channellayout>
-                    <focusedchannellayout height="50" width="380">
+                    <focusedchannellayout height="76" width="320">
                         <!--<animation effect="fade" start="110" time="200">OnFocus</animation>-->
                         <control type="image" id="1">
-                            <left>45</left>
-                            <width>330</width>
-                            <height>50</height>
-                            <texture border="8">pvr/pvrbutton.png</texture>
+							<top>2</top>
+							<right>4</right>
+							<width>234</width>
+							<height>72</height>
+                            <texture border="8" colordiffuse="$VAR[bannercolor]">
+							pvr/pvrbutton.png</texture>
+							<align>right</align>
+							<aligny>center</aligny>
                         </control>
-                        <control type="label">
-                            <width>40</width>
-                            <height>52</height>
-                            <font>font12</font>
-                            <align>right</align>
-                            <aligny>center</aligny>
-                            <textcolor>gray</textcolor>
-                            <selectedcolor>red</selectedcolor>
-                            <info>ListItem.ChannelNumber</info>
-                        </control>
-                        <control type="label" id="1">
-                            <left>60</left>
-                            <width>300</width>
-                            <height>52</height>
-                            <font>Size26</font>
-                            <aligny>center</aligny>
-                            <textcolor>black</textcolor>
-                            <selectedcolor>red</selectedcolor>
-                            <align>left</align>
+						<control type="label" description="Channel Number">
+							<width>60</width>
+							<height>76</height>
+							<font>size27</font>
+							<align>right</align>
+							<aligny>center</aligny>
+							<textcolor>darktextunfo</textcolor>
+							<selectedcolor>red</selectedcolor>
+							<info>ListItem.ChannelNumber</info>
+						</control>
+                        <control type="label" id="1" description="Channel Name">
+							<!--visible>IsEmpty(ListItem.Icon)</visible-->
+							<right>16</right>
+							<width>214</width>
+							<height>76</height>
+							<font>Size24</font>
+							<aligny>center</aligny>
+							<textcolor>darktext</textcolor>
+							<selectedcolor>red</selectedcolor>
+							<align>right</align>
+							<scroll>false</scroll>
                             <label>$INFO[ListItem.ChannelName]</label>
                         </control>
+						<control type="image" description="Channel Icon">
+							<visible>!Skin.HasSetting(PVRicons)</visible>
+							<top>1</top>
+							<right>4</right>
+							<width>234</width>
+							<height>74</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<align>right</align>
+							<aligny>center</aligny>
+						</control>	
                     </focusedchannellayout>
-                    <itemlayout height="50" >
+					
+					
+
+
+<!-- EPG - Right Panel (Content) --   NEED TO FIX       --> 					
+                    <itemlayout height="76" >
                         <control type="image" id="2">
                             <width></width>
-                            <height>50</height>
+                            <height>76</height>
                             <aspectratio>stretch</aspectratio>
-                            <texture border="8" fallback="pvr/pvrbutton.png" colordiffuse="ff666666">$INFO[ListItem.Property(GenreType),pvr/,.png]</texture>
+                            <texture border="20" fallback="pvr/pvrbutton.png" colordiffuse="$VAR[bannercolor]">$INFO[ListItem.Property(GenreType),pvr/,.png]</texture>
                         </control>
+						
+						
+					
+						
+						
                         <control type="label" id="1">
                             <visible>!ListItem.IsRecording</visible>
                             <left>10</left>
                             <width>-20</width>
-                            <height>52</height>
-                            <font>font12</font>
+                            <height>76</height>
+                            <font>size28</font>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>darktextunfo</textcolor>
                             <shadowcolor>-</shadowcolor>
                             <align>left</align>
                             <scroll>false</scroll>
@@ -138,15 +216,15 @@
                             <visible>ListItem.IsRecording</visible>
                             <left>25</left>
                             <width>-35</width>
-                            <height>50</height>
-                            <font>font12</font>
+                            <height>76</height>
+                            <font>size28</font>
                             <aligny>center</aligny>
                             <textcolor>red</textcolor>
                             <shadowcolor>-</shadowcolor>
                             <align>left</align>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
-                        <control type="image">
+                        <control type="image"><!--need to fix-->
                             <left>0</left>
                             <top>13</top>
                             <width>25</width>
@@ -154,7 +232,7 @@
                             <texture>pvr/rec.png</texture>
                             <visible>ListItem.IsRecording</visible>
                         </control>
-                        <control type="image">
+                        <control type="image"><!--need to fix-->
                             <left>0</left>
                             <top>13</top>
                             <width>25</width>
@@ -163,10 +241,10 @@
                             <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="50">
+                    <focusedlayout height="76">
                         <control type="image" id="2">
                             <width>-</width>
-                            <height>50</height>
+                            <height>76</height>
                             <aspectratio>stretch</aspectratio>
                             <texture border="8" fallback="pvr/pvrbutton.png">$INFO[ListItem.Property(GenreType),pvr/,.png]</texture>
                         </control>
@@ -174,27 +252,28 @@
                             <visible>!ListItem.IsRecording</visible>
                             <left>10</left>
                             <width>-20</width>
-                            <height>50</height>
-                            <font>font12</font>
+                            <height>76</height>
+                            <font>size28</font>
                             <aligny>center</aligny>
                             <textcolor>black</textcolor>
                             <shadowcolor>-</shadowcolor>
                             <align>left</align>
+                            <scroll>false</scroll>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="label" id="1">
                             <visible>ListItem.IsRecording</visible>
                             <left>25</left>
                             <width>-35</width>
-                            <height>50</height>
-                            <font>font12</font>
+                            <height>76</height>
+                            <font>size28</font>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>red</textcolor>
                             <shadowcolor>-</shadowcolor>
                             <align>left</align>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
-                        <control type="image">
+                        <control type="image"><!--need to fix-->
                             <left>0</left>
                             <top>13</top>
                             <width>25</width>
@@ -202,7 +281,7 @@
                             <texture>pvr/rec.png</texture>
                             <visible>ListItem.IsRecording</visible>
                         </control>
-                        <control type="image">
+                        <control type="image"><!--need to fix-->
                             <left>0</left>
                             <top>13</top>
                             <width>25</width>
@@ -211,8 +290,107 @@
                             <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
                         </control>
                     </focusedlayout>
+					
+					
+					
+					
+					
+					
+					
+					
+					
                 </control>
             </control>
+<!--  EPG TOP INFO -->				
+                <control type="group">
+                    <visible>ListItem(10).HasEpg</visible>
+                    <!--top>60</top-->	
+					<control type="group">
+						<visible>!Player.HasVideo</visible>
+						<control type="image" description="Line Split">
+							<top>64</top>
+							<left>60</left>
+							<width>1800</width>
+							<height>1</height>
+							<texture>images/LineL.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="label">
+							<description>header label</description>
+							<left>120</left>
+							<top>30</top>
+							<width>1120</width>
+							<height>30</height>
+							<font>size26</font>
+							<label>$LOCALIZE[19047]</label>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>icontextunfo</textcolor>
+						</control>
+					</control>
+                    <control type="grouplist">
+						<top>86</top>
+						<left>160</left>
+                        <width>1920</width>
+                        <height>300</height>
+                        <orientation>vertical</orientation>
+						<control type="label">
+							<description>Title label</description>
+							<width>1100</width>
+							<height>35</height>
+							<font>size33</font>
+							<label>[B]$INFO[ListItem.Title][/B]</label>
+							<align>left</align>
+							<textcolor>darktextunfo</textcolor>
+						</control>					
+                        <!--control type="image">
+                            <left>0</left>
+                            <top>100</top>
+                            <width>1160</width>
+                            <height>1</height>
+                            <texture>lines/Line.png</texture>
+                            <aspectratio>stretch</aspectratio>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>380</top>
+                            <width>1160</width>
+                            <height>1</height>
+                            <texture>lines/Line.png</texture>
+                            <aspectratio>stretch</aspectratio>
+                        </control-->
+                        <control type="label">
+							<visible>!IsEmpty(ListItem.ChannelName)</visible>
+                            <description>Channel Info / Start Time - End Time</description>
+							<top>10</top>
+                            <width>1000</width>
+                            <height>32</height>
+                            <align>left</align>
+                            <font>size26</font>
+                            <textcolor>icontextunfo</textcolor>
+                            <!--label>$LOCALIZE[180]: $INFO[ListItem.Duration] / $LOCALIZE[135]: $INFO[ListItem.Genre]</label-->
+							<label>  $INFO[ListItem.ChannelNumber]  $INFO[ListItem.ChannelName] / $INFO[ListItem.StartTime]-$INFO[ListItem.EndTime]</label>
+                        </control>						
+						<!--control type="image" description="Line Split">
+							<width>1800</width>
+							<height>1</height>
+							<texture>images/LineL.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control-->
+                        <control type="textbox" id="400">
+                            <description>Plot value</description>
+							<top>0</top>
+                            <width>1600</width>
+                            <height>130</height>
+                            <font>size26</font>
+                            <align>justify</align>
+                            <pagecontrol>-</pagecontrol>
+							<textcolor>darktextunfo</textcolor>
+                            <label>$INFO[ListItem.Plot]</label>
+							<!--label fallback="161">$INFO[ListItem.Plot]</label-->
+                        </control>
+                    </control>
+                </control>														
             <!--<control type="group">-->
             <!--<description>Timeline Media Window</description>-->
             <!--<visible>Control.IsVisible(10)</visible>-->

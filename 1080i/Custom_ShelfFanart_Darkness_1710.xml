@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1710">
+  <defaultcontrol>9000</defaultcontrol>
+  <include>DialogOpenClose</include>
+  <controls>
+
+	<control type="image" description="List back border">
+	  <centerleft>960</centerleft>
+	  <centertop>540</centertop>
+	  <width>738</width>
+	  <height>648</height>
+	  <aspectratio>stretch</aspectratio>
+	  <texture>$VAR[BorderColor]</texture>	  
+	</control>	
+	<control type="image" description="List back">
+		<centerleft>960</centerleft>
+		<centertop>540</centertop>
+		<width>802</width>
+		<height>726</height>
+		<aspectratio>stretch</aspectratio>
+		<include condition="IsEmpty(Skin.String(CustomBgDialog)) + IsEmpty(Skin.String(CustomBgHome)) + ![Skin.HasTheme(Dark)|Skin.HasTheme(White)]">DialogTexture</include>
+		<include condition="!IsEmpty(Skin.String(CustomBgDialog)) | !IsEmpty(Skin.String(CustomBgHome)) | Skin.HasTheme(Dark) | Skin.HasTheme(White)">DialogTextureBG</include>		
+	</control>	
+	<control type="image" description="List back diffuse">
+		<centerleft>960</centerleft>
+		<centertop>540</centertop>
+		<width>802</width>
+		<height>726</height>
+		<aspectratio>stretch</aspectratio>
+		<texture border="50" colordiffuse="$VAR[diffusedialog]" diffuse="images/shelffanartdiffuse.png">images/whitebg.png</texture>
+	</control> 
+  
+<!--  
+    <control type="image" description="List back">
+      <centerleft>960</centerleft>
+      <centertop>540</centertop>
+      <width>802</width>
+      <height>640</height>
+      <aspectratio>stretch</aspectratio>
+      <texture border="50">$VAR[ContextMenu]</texture>
+      <!--colordiffuse>dialog</colordiffuse>
+    </control>
+-->
+    <control type="grouplist" id="9000">
+      <centertop>534</centertop>
+      <height>580</height>
+      <align>center</align>
+      <include>DialogGLs</include> 
+	  <control type="label" id="99" description="Dialog heading">
+		<width>525</width>
+		<height>112</height>
+		<label>$LOCALIZE[31100]</label>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>size30</font>
+		<textcolor>darktextunfo</textcolor>
+	  </control>	  
+	  <control type="radiobutton" id="1">
+		<label>$LOCALIZE[31081] 1</label>
+		<onclick>Skin.ToggleSetting(shelffanartdiffuse)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse2)">Skin.ToggleSetting(shelffanartdiffuse2)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse3)">Skin.ToggleSetting(shelffanartdiffuse3)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse4)">Skin.ToggleSetting(shelffanartdiffuse4)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse5)">Skin.ToggleSetting(shelffanartdiffuse5)</onclick>					
+		<selected>Skin.HasSetting(shelffanartdiffuse)</selected>				
+	  </control>
+	  <control type="radiobutton" id="2">
+		<label>$LOCALIZE[31081] 2</label>
+		<onclick>Skin.ToggleSetting(shelffanartdiffuse2)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse)">Skin.ToggleSetting(shelffanartdiffuse)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse3)">Skin.ToggleSetting(shelffanartdiffuse3)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse4)">Skin.ToggleSetting(shelffanartdiffuse4)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse5)">Skin.ToggleSetting(shelffanartdiffuse5)</onclick>					
+		<selected>Skin.HasSetting(shelffanartdiffuse2)</selected>				
+	  </control>
+	  <control type="radiobutton" id="3">
+		<label>$LOCALIZE[31081] 3</label>
+		<onclick>Skin.ToggleSetting(shelffanartdiffuse3)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse)">Skin.ToggleSetting(shelffanartdiffuse)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse2)">Skin.ToggleSetting(shelffanartdiffuse2)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse4)">Skin.ToggleSetting(shelffanartdiffuse4)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse5)">Skin.ToggleSetting(shelffanartdiffuse5)</onclick>					
+		<selected>Skin.HasSetting(shelffanartdiffuse3)</selected>				
+	  </control>								
+	  <control type="radiobutton" id="4">
+		<label>$LOCALIZE[31081] 4</label>
+		<onclick>Skin.ToggleSetting(shelffanartdiffuse4)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse)">Skin.ToggleSetting(shelffanartdiffuse)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse2)">Skin.ToggleSetting(shelffanartdiffuse2)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse3)">Skin.ToggleSetting(shelffanartdiffuse3)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse5)">Skin.ToggleSetting(shelffanartdiffuse5)</onclick>					
+		<selected>Skin.HasSetting(shelffanartdiffuse4)</selected>				
+	  </control>
+	  <control type="radiobutton" id="5">
+		<label>$LOCALIZE[31081] 5</label>
+		<onclick>Skin.ToggleSetting(shelffanartdiffuse5)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse)">Skin.ToggleSetting(shelffanartdiffuse)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse2)">Skin.ToggleSetting(shelffanartdiffuse2)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse3)">Skin.ToggleSetting(shelffanartdiffuse3)</onclick>
+		<onclick condition="Skin.HasSetting(shelffanartdiffuse4)">Skin.ToggleSetting(shelffanartdiffuse4)</onclick>					
+		<selected>Skin.HasSetting(shelffanartdiffuse5)</selected>				
+	  </control>	   
+    </control>
+  </controls>
+</window>

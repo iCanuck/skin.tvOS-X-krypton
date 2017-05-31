@@ -163,7 +163,7 @@
                                 <aspectratio>stretch</aspectratio>
                             </control>
 							<control type="image">
-								<visible>!Skin.HasSetting(HomeZoom)</visible>						
+								<visible>!Skin.HasSetting(HomeIconZoom)</visible>						
 								<animation effect="fade" start="0" end="100" time="120">Focus</animation>
 								<animation effect="fade" start="100" end="0" time="120">unFocus</animation>					
 								<centerleft>227</centerleft>

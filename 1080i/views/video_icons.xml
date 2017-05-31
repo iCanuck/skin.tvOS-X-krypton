@@ -29,12 +29,13 @@
                         <aspectratio>stretch</aspectratio>
                     </control>
 					<control type="label">
+						<visible>[!Skin.HasSetting(labelunfo) + [![Skin.HasTheme(Dark)|Skin.HasTheme(White)]]] | [Skin.HasSetting(labelunfo) + [Skin.HasTheme(Dark)|Skin.HasTheme(White)]]</visible>
 						<centerleft>227</centerleft>
 						<top>354</top>
 						<width>300</width>
 						<height>20</height>
 						<font>size26</font>
-						<textcolor>white</textcolor>
+						<textcolor>icontextunfo</textcolor>
 						<align>center</align>
 						<label>$INFO[ListItem.Label]</label>
 					</control>					
@@ -63,7 +64,7 @@
                             <aspectratio>stretch</aspectratio>
                         </control>
                         <control type="image">
-							<visible>!Skin.HasSetting(HomeZoom)</visible>						
+							<visible>!Skin.HasSetting(HomeIconZoom) + ![Skin.HasTheme(Dark)|Skin.HasTheme(White)]</visible>						
 							<animation effect="fade" start="0" end="100" time="120">Focus</animation>
 							<animation effect="fade" start="100" end="0" time="120">unFocus</animation>						
                             <centerleft>227</centerleft>
@@ -81,7 +82,7 @@
                             <width>300</width>
                             <height>20</height>
                             <font>size27</font>
-                            <textcolor>white</textcolor>
+                            <textcolor>icontext</textcolor>
                             <align>center</align>
                             <label>[B]$INFO[ListItem.Label][/B]</label>
                         </control>
@@ -117,6 +118,7 @@
                         <aspectratio>scale</aspectratio>
                     </control>
                     <control type="textbox">
+						<visible>[!Skin.HasSetting(labelunfo) + [![Skin.HasTheme(Dark)|Skin.HasTheme(White)]]] | [Skin.HasSetting(labelunfo) + [Skin.HasTheme(Dark)|Skin.HasTheme(White)]]</visible>
                         <!--visible>$EXP[istransparent]</visible-->
                         <bottom>-58</bottom>
                         <centerleft>227</centerleft>
@@ -124,6 +126,7 @@
                         <height>100</height>
 						<font>size24</font>
                         <align>center</align>
+						<textcolor>icontextunfo</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                     <control type="group">
@@ -210,7 +213,7 @@
                             <aspectratio>scale</aspectratio>
                         </control>
                         <control type="image">
-							<visible>!Skin.HasSetting(HomeZoom)</visible>
+							<visible>!Skin.HasSetting(HomeIconZoom) + ![Skin.HasTheme(Dark)|Skin.HasTheme(White)]</visible>
 							<animation effect="fade" start="0" end="100" time="120">Focus</animation>
 							<animation effect="fade" start="100" end="0" time="120">unFocus</animation>
                             <centertop>237</centertop>
@@ -231,6 +234,7 @@
                         </control>
                         <control type="textbox">
                             <!--visible>$EXP[istransparent]</visible-->
+							<textcolor>icontext</textcolor>
                             <bottom>-58</bottom>
                             <centerleft>227</centerleft>
                             <width>308</width>
@@ -312,12 +316,14 @@
 							<texture>$VAR[WatchStatus]</texture>
 						</control>
 						<control type="label">
+							<visible>!Skin.HasSetting(labelunfo)+[![Skin.HasTheme(Dark)|Skin.HasTheme(White)]]</visible>
 							<left>59</left>
 							<top>330</top>
 							<width>410</width>
 							<height>45</height>
 							<font>size24</font>
 							<align>center</align>
+							<textcolor>icontextunfo</textcolor>
 							<label>[B]$INFO[ListItem.Label][/B]</label>
 						</control>					
 					</control>
@@ -346,7 +352,7 @@
                             <aspectratio>scale</aspectratio>
                         </control>
                         <control type="image">
-							<visible>!Skin.HasSetting(HomeZoom)</visible>
+							<visible>!Skin.HasSetting(HomeIconZoom)</visible>
 							<animation effect="fade" start="0" end="100" time="120">Focus</animation>
 							<animation effect="fade" start="100" end="0" time="120">unFocus</animation>						
                             <left>59</left>
@@ -363,6 +369,7 @@
                             <height>45</height>
                             <font>size24</font>
                             <align>center</align>
+							<textcolor>icontext</textcolor>
                             <label>[B]$INFO[ListItem.Label][/B]</label>
                         </control>	
 						<control type="image" description="WatchStatus">

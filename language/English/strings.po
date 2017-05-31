@@ -111,8 +111,8 @@ msgid "Log Off"
 msgstr "Log Off"
 
 msgctxt "#31036"
-msgid "Reset ALL skin settings to default"
-msgstr "Reset ALL skin settings to default"
+msgid "Reset ALL Skin Settings to default"
+msgstr "Reset ALL Skin Settings to default"
 
 msgctxt "#31037"
 msgid "App Store"
@@ -299,8 +299,8 @@ msgid "Custom Dialog Background"
 msgstr "Custom Dialog Background"
 
 msgctxt "#31086"
-msgid "Custom Dialog Darkness"
-msgstr "Custom Dialog Darkness"
+msgid "Dialog BG Darkness"
+msgstr "Dialog BG Darkness"
 
 msgctxt "#31087"
 msgid "Custom Dialog Pattern"
@@ -350,6 +350,49 @@ msgctxt "#31098"
 msgid "Advanced"
 msgstr "Advanced"
 
+msgctxt "#31099"
+msgid "Fanart BG Darkness"
+msgstr "Fanart BG Darkness"
+
+msgctxt "#31100"
+msgid "Shelf Fanart BG Darkness"
+msgstr "Shelf Fanart BG Darkness"
+
+msgctxt "#31101"
+msgid "Fanart Background Settings"
+msgstr "Fanart Background Settings"
+
+msgctxt "#31102"
+msgid "Loading text at busy screen"
+msgstr "Loading text at busy screen"
+
+msgctxt "#31103"
+msgid "View unfocused labels in icon views"
+msgstr "View unfocused labels in icon views"
+
+msgctxt "#31104"
+msgid "Home Panel Zoom Animation"
+msgstr "Home Panel Zoom Animation"
+
+msgctxt "#31105"
+msgid "Fullscreen PVR Preview"
+msgstr "Fullscreen PVR Preview"
+
+msgctxt "#31106"
+msgid "Reset ONLY Home Settings to default"
+msgstr "Reset ONLY Home Settings to default"
+
+msgctxt "#31107"
+msgid "Reset ONLY Skin Settings to default"
+msgstr "Reset ONLY Skin Settings to default"
+
+msgctxt "#31108"
+msgid "PVR Channel Icons"
+msgstr "PVR Channel Icons"
+
+msgctxt "#31109"
+msgid "PVR Channel Labels"
+msgstr "PVR Channel Labels"
 
 
 msgctxt "#31422"
